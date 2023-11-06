@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Andrés Bermeo Pintura Decorativa</title>
+  <style>
+
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+    body {font-size:16px;}
+    .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+    .w3-half img:hover{opacity:1}
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>ANDRÉS<br>BERMEO</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a> 
+      <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trabajos</a> 
+      <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servicios</a> 
+      <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Bio</a> 
+      <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>Andrés Bermeo</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 class="w3-jumbo"><b>Pintura decorativa y limpieza</b></h1>
+      <h1 class="w3-xxxlarge w3-text-red"><b>Trabajos.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+    </div>
+
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <img src="./photos/habitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Pintura decorativa">
+        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación Madera">
+        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación marmol">
+      </div>
+
+      <div class="w3-half">
+        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación marmol">
+        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación Madera">
+        <img src="./photos/habitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Pintura decorativa">
+      </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="w3-container" id="services" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Servicios.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Somos un servicio de pintura decorativa que se centra en plasmar tus ideas, con 15 años de experiencía contamos con el conocimiento adecuado para brindar soluciones a lo que quieras plasmar.</p>
+      <p>Ofrecemos una variedad de servicios de pintura, incluyendo técnicas especializadas como la imitación de mármol, madera y mucho más. Nos esforzamos por brindar resultados de alta calidad que transformen tus espacios. </p>
+
+    </div>
+
+    <!-- Designers -->
+    <div class="w3-container" id="designers" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Bio.</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <p>Especialistas en pintura.</p>
+      
+    </div>
+
+    <!-- The Team -->
+    <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+          <div class="w3-container">
+            <h3>Andrés Bermeo</h3>
+            <p class="w3-opacity">CEO & Founder</p>
+            <p>15 años de experiencia como pintor, formado en varias tecnicas como: </p>
+            <p>Escola de pintors: Pintura Decorativa</p>
+            <p>Escola de pintors: Imitación al Marmol</p>
+            <p>Escola de pintors: Imitación a Madera</p>
+            <p>Copiba: Trabajos Verticales</p>
+            <p>Escola de Electricitat de Catalunya: Electricista</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Packages / Pricing Tables 
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Packages.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">10 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">20% furniture discount</li>
+        <li class="w3-padding-16">Good deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 199</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+        <li class="w3-padding-16">Floorplanning</li>
+        <li class="w3-padding-16">50 hours support</li>
+        <li class="w3-padding-16">Photography</li>
+        <li class="w3-padding-16">50% furniture discount</li>
+        <li class="w3-padding-16">GREAT deals</li>
+        <li class="w3-padding-16">
+          <h2>$ 249</h2>
+          <span class="w3-opacity">per room</span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+        </li>
+      </ul>
+    </div>
+  </div>-->
+
+  <!-- Contact -->
+  <div class="w3-container" id="contact" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Contacto.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p><i class="fa fa-map-marker" style="width:100%"></i> Barcelona</p>
+    <p><i class="fa fa-phone" style="width:100%"></i> Telefonos: +34 658 46 16 33 , +34 623 99 11 93</p>
+    <p><i class="fa fa-envelope" style="width:100%"> </i> pinturdecorandreu@gmail.com</p>
+    <h2>Contactanos ahora mismo</h2>
+    <a href="https://api.whatsapp.com/send?phone=34658461633" target="_blank" class="button">Por WhatsApp</a>
+
+    <h2>O por Email</h2>
+    <form style="width:100%" action="mailto:pinturdecorandreu@gmail.com" method="post" enctype="text/plain">
+      <input style="width:100%"  type="text" id="fname" name="firstname" placeholder="Tu nombre" required>
+      <p></p>
+      <input style="width:100%"  type="text" id="lname" name="lastname" placeholder="Tu apellido" required>
+      <p></p>
+      <input style="width:100%"  type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+      <p></p>
+
+      <textarea style="width:100%"  id="message" name="message" placeholder="Escribe tu mensaje aquí" style="height:200px" required></textarea>
+      <p></p>
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+  <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+// Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+// Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+</script>
+
+</body>
+</html>
