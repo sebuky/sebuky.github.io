@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Andrés Bermeo Pintura Decorativa</title>
+  <title>AB Decorum</title>
   <style>
-
+    /* Estilos del botón */
     .button {
       display: inline-block;
       background-color: #4CAF50;
@@ -19,10 +19,39 @@
       cursor: pointer;
     }
 
+    /* Efecto hover del botón */
     .button:hover {
       background-color: #45a049;
     }
 
+    /* Ajustes adicionales para que el formulario encaje mejor */
+    #formulario {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #formulario label,
+    #formulario select,
+    #formulario input[type="text"],
+    #formulario input[type="number"],
+    #formulario textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #formulario button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #formulario button[type="submit"]:hover {
+      background-color: #45a049;
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,21 +70,33 @@
   <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
     <div class="w3-container">
-      <h3 class="w3-padding-64"><b>ANDRÉS<br>BERMEO</b></h3>
+      <h3 class="w3-padding-64"><b>AB Decorum</b></h3>
     </div>
     <div class="w3-bar-block">
       <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Inicio</a> 
-      <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trabajos</a> 
+      <!--<a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trabajos</a> -->
+      
       <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Servicios</a> 
-      <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Bio</a> 
+      <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Quienes Somos</a> 
       <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contacto</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-padding-large w3-button" href="#showcase" title="Trabajos">Trabajos<i class="fa fa-caret-down"></i></button>     
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+               <a href="./trabajos.html#imitacion" class="w3-bar-item w3-button">Imitación</a>
+                <a href="./trabajos.html#limpieza" class="w3-bar-item w3-button">Limpieza de ladrillo</a>
+                <a href="./trabajos.html#imitacion" class="w3-bar-item w3-button">Pintura alta calidad</a>
+                <a href="./trabajos.html#imitacion" class="w3-bar-item w3-button">Técnicas Decorativas</a>
+                <a href="./trabajos.html#imitacion" class="w3-bar-item w3-button">Microcemento</a>
+                <a href="./trabajos.html#imitacion" class="w3-bar-item w3-button">Decapar</a>
+            </div>
+         </div>
     </div>
   </nav>
 
   <!-- Top menu on small screens -->
   <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
     <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
-    <span>Andrés Bermeo</span>
+    <span>AB Decorum</span>
   </header>
 
   <!-- Overlay effect when opening sidebar on small screens -->
@@ -66,7 +107,9 @@
 
     <!-- Header -->
     <div class="w3-container" style="margin-top:80px" id="showcase">
-      <h1 class="w3-jumbo"><b>Pintura decorativa y limpieza</b></h1>
+      <h1 class="w3-jumbo w3-text-gray"><img src="./photos/logosmall.jpg" style="width:20%" onclick="onClick(this)" alt="Logo AB Decorum">
+      <b>Decorum</b></h1> 
+      <h3 class="xxlarge"><b>Pintura decorativa y limpieza</b></h3>
       <h1 class="w3-xxxlarge w3-text-green"><b>Trabajos.</b></h1>
       <hr style="width:50px;border:5px solid blue" class="w3-round">
     </div>
@@ -74,15 +117,25 @@
     <!-- Photo grid (modal) -->
     <div class="w3-row-padding">
       <div class="w3-half">
-        <img src="./photos/habitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Pintura decorativa">
-        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación Madera">
-        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación marmol">
+        <b>Imitación</b>
+        <img src="./photos/habitacion.jpg" style="width:100%" onclick="window.open('./trabajos.html#imitacion','_self')" alt="Imitación">
+        <p> <br></p>
+        <b>Limpieza de ladrillo</b>
+        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="window.open('./trabajos.html#limpieza','_self')" alt="Limpieza de ladrillo">
+        <p> <br></p>
+        <b>Pintura alta calidad</b>
+        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="window.open('./trabajos.html#pintura','_self')" alt="Pintura alta calidad">
       </div>
 
       <div class="w3-half">
-        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación marmol">
-        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Imitación Madera">
-        <img src="./photos/habitacion.jpg" style="width:100%" onclick="onClick(this)" alt="Pintura decorativa">
+        <b>Técnicas Decorativas</b>
+        <img src="./photos/marmol-imitacion-2.jpg" style="width:100%" onclick="window.open('./trabajos.html#tecnicas','_self')" alt="Técnicas Decorativas">
+        <p> <br></p>
+        <b>Microcemento</b>
+        <img src="./photos/madera-imitacion.jpg" style="width:100%" onclick="window.open('./trabajos.html#microcemento','_self')" alt="Microcemento">
+        <p> <br></p>        
+        <b>Decapar</b>
+        <img src="./photos/habitacion.jpg" style="width:100%" onclick="window.open('./trabajos.html#decapar','_self')" alt="Decapar">
       </div>
     </div>
 
@@ -99,24 +152,27 @@
     <div class="w3-container" id="services" style="margin-top:75px">
       <h1 class="w3-xxxlarge w3-text-green"><b>Servicios.</b></h1>
       <hr style="width:50px;border:5px solid blue" class="w3-round">
-      <p>Somos un servicio de pintura decorativa que se centra en plasmar tus ideas, con 15 años de experiencía contamos con el conocimiento adecuado para brindar soluciones a lo que quieras plasmar.</p>
-      <p>Ofrecemos una variedad de servicios de pintura, incluyendo técnicas especializadas como la imitación de mármol, madera y mucho más. Nos esforzamos por brindar resultados de alta calidad que transformen tus espacios. </p>
+      <p>Pintura</p>
+      <p>Limpieza</p>
+      <p>Electricista</p>
 
     </div>
 
-    <!-- Designers -->
+    <!-- Quienes Somos -->
     <div class="w3-container" id="designers" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-green"><b>Bio.</b></h1>
+      <h1 class="w3-xxxlarge w3-text-green"><b>Quienes somos.</b></h1>
       <hr style="width:50px;border:5px solid blue" class="w3-round">
-      <p>Especialistas en pintura.</p>
-      
+      <p>Somos un servicio de pintura decorativa que se centra en plasmar tus ideas. Con 15 años de experiencia, contamos con el conocimiento adecuado para brindar soluciones a lo que quieras plasmar.</p>
+      <p>Ofrecemos una variedad de servicios de pintura, incluyendo técnicas especializadas como la imitación de mármol, madera y mucho más. Nos esforzamos por brindar resultados de alta calidad que transformen tus espacios. </p>
+
     </div>
 
     <!-- The Team -->
     <div class="w3-row-padding w3-grayscale">
       <div class="w3-col m4 w3-margin-bottom">
         <div class="w3-light-grey">
-          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+          
+          <!--<img src="/w3images/team2.jpg" alt="John" style="width:100%">-->
           <div class="w3-container">
             <h3>Andrés Bermeo</h3>
             <p class="w3-opacity">CEO & Founder</p>
@@ -125,7 +181,7 @@
             <p>Escola de pintors: Imitación al Marmol</p>
             <p>Escola de pintors: Imitación a Madera</p>
             <p>Copiba: Trabajos Verticales</p>
-            <p>Escola de Electricitat de Catalunya: Electricista</p>
+            <p>Centro Tecnico Europeo Electricista</p>
           </div>
         </div>
       </div>
@@ -182,12 +238,54 @@
     <h1 class="w3-xxxlarge w3-text-green"><b>Contacto.</b></h1>
     <hr style="width:50px;border:5px solid blue" class="w3-round">
     <p><i class="fa fa-map-marker" style="width:100%"></i> Barcelona</p>
-    <p><i class="fa fa-phone" style="width:100%"></i> Telefonos: +34 658 46 16 33 , +34 623 99 11 93</p>
+    <p><i class="fa fa-phone" style="width:100%"></i> Teléfonos: +34 658 46 16 33 , +34 623 99 11 93</p>
     <p><i class="fa fa-envelope" style="width:100%"> </i> pinturdecorandreu@gmail.com</p>
-    <h2>Contactanos ahora mismo</h2>
-    <a href="https://api.whatsapp.com/send?phone=34658461633" target="_blank" class="button">Por WhatsApp</a>
+    
 
-    <h2>O por Email</h2>
+    <h2>Presupuestos</h2>
+    
+    <hr style="width:50px;border:5px solid blue" class="w3-round">
+
+    <form id="formulario" action="mailto:bluker@gmail.com" method="post" enctype="text/plain">
+        <label for="pintar">Pintar:</label>
+        <select id="pintar">
+            <option value="habitaciones">Habitaciones</option>
+            <option value="cocina">Cocina</option>
+            <option value="baño">Baño</option>
+            <option value="toda_la_casa">Toda la Casa</option>
+            <option value="otras">Otras</option>
+        </select>
+        <input type="text" id="otrasText" placeholder="Especificar Otras">
+        <br><br>
+        <label for="numHabitaciones">Número de habitaciones:</label>
+        <input type="number" id="numHabitaciones" min="1" value="1">
+        <br><br>
+        <div id="habitaciones"></div>
+        <br><br>
+        <label for="calidad">Calidad de Pintura:</label>
+        <select id="calidad">
+            <option value="baja">Baja</option>
+            <option value="media">Media</option>
+            <option value="alta">Alta</option>
+        </select>
+        <p id="infoCalidad"></p>
+        <br><br>
+        <label for="altura">¿Hay sitios con altura (más de dos metros)?:</label>
+        <input type="checkbox" id="altura">
+        <br><br>
+        <label for="humedades">¿Hay humedades?:</label>
+        <input type="checkbox" id="humedades">
+        <br><br>
+        <label for="otrasEspecificaciones">Otras Especificaciones:</label><br>
+        <textarea id="otrasEspecificaciones" rows="4" cols="50"></textarea>
+        <br><br>
+        <button type="button" class="button" onclick="enviarMensajeWhatsApp()">Enviar</button>
+    </form>
+
+    <h2>¿Otras dudas? , Contáctanos ahora mismo</h2>
+    <a href="https://api.whatsapp.com/send?phone=34658461633" target="_blank" class="button">A través de WhatsApp</a>
+
+    <h2>O por correo electrónico</h2>
     <form style="width:100%" action="mailto:pinturdecorandreu@gmail.com" method="post" enctype="text/plain">
       <input style="width:100%"  type="text" id="fname" name="firstname" placeholder="Tu nombre" requiblue>
       <p></p>
@@ -200,6 +298,8 @@
       <p></p>
       <input type="submit" value="Enviar">
     </form>
+  </div>
+
   </div>
 
   <!-- End page content -->
@@ -227,6 +327,85 @@
     var captionText = document.getElementById("caption");
     captionText.innerHTML = element.alt;
   }
+
+  function enviarMensajeWhatsApp() {
+    // Obtener los valores del formulario
+     var pintar = document.getElementById("pintar").value;
+    var calidad = document.getElementById("calidad").value;
+    var numHabitaciones = document.getElementById("numHabitaciones").value;
+    var altura = document.getElementById("altura").checked ? "Sí" : "No";
+    var humedades = document.getElementById("humedades").checked ? "Sí" : "No";
+    var otrasEspecificaciones = document.getElementById("otrasEspecificaciones").value;
+
+    // Otros campos del formulario según sea necesario
+
+     var mensaje = "Formulario de Presupuesto\n\n";
+    mensaje += "Pintar: " + pintar + "\n";
+    mensaje += "Calidad de Pintura: " + calidad + "\n";
+    mensaje += "Número de habitaciones: " + numHabitaciones + "\n";
+
+    for (let i = 1; i <= numHabitaciones; i++) {
+      var habMetros = document.getElementById("metrosCuadrados" + i).value;
+      mensaje += "m2 de habitacion #"+i+": " + habMetros + "\n";
+    }
+
+
+    mensaje += "¿Hay sitios con altura (más de dos metros)?: " + altura + "\n";
+    mensaje += "¿Hay humedades?: " + humedades + "\n";
+    mensaje += "Otras Especificaciones: " + otrasEspecificaciones;
+
+
+    // Número de WhatsApp al que se enviará el mensaje
+    var numeroWhatsApp = "34658461633"; // El número de WhatsApp de la empresa
+
+    // Construir la URL de WhatsApp
+    var url = "https://api.whatsapp.com/send?phone=" + numeroWhatsApp + "&text=" + encodeURIComponent(mensaje);
+
+    // Abrir la URL de WhatsApp en una nueva ventana
+    window.open(url, '_blank');
+  }
+
+  const calidadInfo = {
+            baja: "Incluye lijado suave, limpieza de la superficie y pintura sobre la superficie. No incluye masillado.",
+            media: "Incluye lijado profundo, masillado, limpieza de la superficie y pintura con resultados óptimos.",
+            alta: "Incluye lijado profundo, masillado, limpieza de la superficie y pintura con acabados finos."
+        };
+
+        document.getElementById("calidad").addEventListener("change", function() {
+            const calidadSeleccionada = this.value;
+            document.getElementById("infoCalidad").textContent = calidadInfo[calidadSeleccionada];
+        });
+
+        document.getElementById("numHabitaciones").addEventListener("input", function() {
+            const numHabitaciones = parseInt(this.value);
+            const habitacionesDiv = document.getElementById("habitaciones");
+            habitacionesDiv.innerHTML = ""; // Limpiar contenido previo
+
+            for (let i = 1; i <= numHabitaciones; i++) {
+                const label = document.createElement("label");
+                label.setAttribute("for", "metrosCuadrados" + i);
+                label.textContent = "Metros Cuadrados de Habitación " + i + ":";
+
+                const input = document.createElement("input");
+                input.setAttribute("type", "number");
+                input.setAttribute("id", "metrosCuadrados" + i);
+
+                habitacionesDiv.appendChild(label);
+                habitacionesDiv.appendChild(input);
+                habitacionesDiv.appendChild(document.createElement("br"));
+            }
+        });
+
+        document.getElementById("pintar").addEventListener("change", function() {
+            if (this.value === "otras") {
+                document.getElementById("otrasText").style.display = "block";
+            } else {
+                document.getElementById("otrasText").style.display = "none";
+            }
+        });
+
+        // Ocultar campo de texto "Otras" al cargar la página
+        document.getElementById("otrasText").style.display = "none";
 </script>
 
 </body>
