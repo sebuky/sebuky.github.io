@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>AB Decorum</title>
+  <style>
+    /* Estilos del botón */
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    /* Efecto hover del botón */
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    /* Ajustes adicionales para que el formulario encaje mejor */
+    #formulario {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    #formulario label,
+    #formulario select,
+    #formulario input[type="text"],
+    #formulario input[type="number"],
+    #formulario textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #formulario button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #formulario button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+    body {font-size:16px;}
+    .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+    .w3-half img:hover{opacity:1}
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>AB Decorum</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="andresbermeo.html" onclick="w3_close()" class="w3-center w3-bar-item w3-button w3-hover-white">Inicio</a> 
+      <!--<a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Trabajos</a> -->
+      
+      </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>Terminos y condiciones</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="showcase">
+      <h1 class="w3-jumbo w3-text-gray"><img src="./photos/logosmall.jpg" style="width:20%" onclick="onClick(this)" alt="Logo AB Decorum">
+      <b>Decorum</b></h1> 
+      <h3 class="xxlarge"><b>Terminos y condiciones</b></h3>
+      <hr style="width:50px;border:5px solid blue" class="w3-round">
+    </div>
+
+    <!-- Services -->
+    <div class="w3-container" id="terminosycondiciones" style="margin-top:75px">
+      
+      <p>Términos y Condiciones:
+        <br>
+        Bienvenido/a a nuestra plataforma web. Por favor, lea detenidamente los siguientes términos y condiciones antes de utilizar nuestros servicios.
+<br>
+<br>
+        Aceptación de los Términos: Al utilizar nuestros servicios, usted acepta y se compromete a cumplir con los términos y condiciones aquí establecidos. Si no está de acuerdo con alguno de estos términos, le rogamos que no utilice nuestros servicios.
+<br>
+<br>
+        Uso de la Información: Nos comprometemos a utilizar el correo electrónico y número de WhatsApp proporcionados por el cliente exclusivamente para fines de comunicación relacionados con la prestación de nuestros servicios y el seguimiento de cualquier solicitud de presupuesto realizada por el cliente.
+<br>
+<br>
+        Privacidad: Respetamos su privacidad y nos comprometemos a proteger sus datos personales de acuerdo con nuestra política de privacidad. Su información de contacto será tratada de manera confidencial y no será compartida con terceros sin su consentimiento expreso, a menos que sea requerido por ley.
+<br>
+<br>
+        Comunicación: Utilizaremos el correo electrónico y WhatsApp proporcionados por el cliente como medios de comunicación para ofrecer nuestros servicios y dar seguimiento a cualquier solicitud de presupuesto. Nos comprometemos a mantener una comunicación clara y oportuna en todo momento.
+<br>
+<br>
+        Consentimiento: Al proporcionar su correo electrónico y número de WhatsApp, usted otorga su consentimiento para que nos comuniquemos con usted utilizando estos medios. Asimismo, acepta recibir información relacionada con nuestros servicios y ofertas promocionales, aunque puede optar por no recibirlas en cualquier momento.
+<br>
+<br>
+        Actualización de la Información: Es responsabilidad del cliente mantener actualizados sus datos de contacto. En caso de cambios en su correo electrónico o número de WhatsApp, le pedimos que nos informe de inmediato para garantizar una comunicación efectiva.
+<br>
+<br>
+        Modificaciones: Nos reservamos el derecho de modificar o actualizar estos términos y condiciones en cualquier momento. Le recomendamos que revise periódicamente esta sección para estar al tanto de cualquier cambio. El uso continuado de nuestros servicios después de la publicación de cualquier modificación constituirá su aceptación de dichos cambios.
+<br>
+<br>
+        Si tiene alguna pregunta o inquietud sobre estos términos y condiciones, no dude en ponerse en contacto con nosotros. Agradecemos su confianza en nuestros servicios.
+
+
+        </p>
+
+    </div>
+
+  
+
+  <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Poweblue by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+// Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+// Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+
+  function enviarMensajeWhatsApp() {
+    // Obtener los valores del formulario
+     var pintar = document.getElementById("pintar").value;
+    var calidad = document.getElementById("calidad").value;
+    var numHabitaciones = document.getElementById("numHabitaciones").value;
+    var altura = document.getElementById("altura").checked ? "Sí" : "No";
+    var humedades = document.getElementById("humedades").checked ? "Sí" : "No";
+    var otrasEspecificaciones = document.getElementById("otrasEspecificaciones").value;
+
+    // Otros campos del formulario según sea necesario
+
+     var mensaje = "Formulario de Presupuesto\n\n";
+    mensaje += "Pintar: " + pintar + "\n";
+    mensaje += "Calidad de Pintura: " + calidad + "\n";
+    mensaje += "Número de habitaciones: " + numHabitaciones + "\n";
+
+    for (let i = 1; i <= numHabitaciones; i++) {
+      var habMetros = document.getElementById("metrosCuadrados" + i).value;
+      mensaje += "m2 de habitacion #"+i+": " + habMetros + "\n";
+    }
+
+
+    mensaje += "¿Hay sitios con altura (más de dos metros)?: " + altura + "\n";
+    mensaje += "¿Hay humedades?: " + humedades + "\n";
+    mensaje += "Otras Especificaciones: " + otrasEspecificaciones;
+
+
+    // Número de WhatsApp al que se enviará el mensaje
+    var numeroWhatsApp = "34658461633"; // El número de WhatsApp de la empresa
+
+    // Construir la URL de WhatsApp
+    var url = "https://api.whatsapp.com/send?phone=" + numeroWhatsApp + "&text=" + encodeURIComponent(mensaje);
+
+    // Abrir la URL de WhatsApp en una nueva ventana
+    window.open(url, '_blank');
+  }
+
+  const calidadInfo = {
+            baja: "Incluye lijado suave, limpieza de la superficie y pintura sobre la superficie. No incluye masillado.",
+            media: "Incluye lijado profundo, masillado, limpieza de la superficie y pintura con resultados óptimos.",
+            alta: "Incluye lijado profundo, masillado, limpieza de la superficie y pintura con acabados finos."
+        };
+
+        document.getElementById("calidad").addEventListener("change", function() {
+            const calidadSeleccionada = this.value;
+            document.getElementById("infoCalidad").textContent = calidadInfo[calidadSeleccionada];
+        });
+
+        document.getElementById("numHabitaciones").addEventListener("input", function() {
+            const numHabitaciones = parseInt(this.value);
+            const habitacionesDiv = document.getElementById("habitaciones");
+            habitacionesDiv.innerHTML = ""; // Limpiar contenido previo
+
+            for (let i = 1; i <= numHabitaciones; i++) {
+                const label = document.createElement("label");
+                label.setAttribute("for", "metrosCuadrados" + i);
+                label.textContent = "Metros Cuadrados de Habitación " + i + ":";
+
+                const input = document.createElement("input");
+                input.setAttribute("type", "number");
+                input.setAttribute("id", "metrosCuadrados" + i);
+
+                habitacionesDiv.appendChild(label);
+                habitacionesDiv.appendChild(input);
+                habitacionesDiv.appendChild(document.createElement("br"));
+            }
+        });
+
+        document.getElementById("pintar").addEventListener("change", function() {
+            if (this.value === "otras") {
+                document.getElementById("otrasText").style.display = "block";
+            } else {
+                document.getElementById("otrasText").style.display = "none";
+            }
+        });
+
+        // Ocultar campo de texto "Otras" al cargar la página
+        document.getElementById("otrasText").style.display = "none";
+</script>
+
+</body>
+</html>
