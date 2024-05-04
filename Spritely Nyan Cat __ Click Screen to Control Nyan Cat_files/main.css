@@ -1,0 +1,28 @@
+#stage {
+			top: 0px;
+			left: 0px;
+			z-index: 100;
+		}
+		
+		.stage {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			min-width: 900px;
+			min-height: 890px;
+			height:100%;
+			overflow: hidden;
+		}
+		
+		#clouds {
+			background: #004378 url(images/nyancatbg.png) 0 0 repeat;
+		}	
+			
+		#nyancat {
+			position: absolute;
+			background: url(images/nyancat.png) no-repeat;
+			width: 500px;
+			height: 350px;
+			z-index: 2000;
+		}
