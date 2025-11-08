@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Production Retreat - Granja Tzikin</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .day-section {
+            min-height: 100vh;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .day-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        .day-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .day-1 .day-overlay { background: linear-gradient(135deg, rgba(255, 154, 158, 0.7) 0%, rgba(250, 208, 196, 0.7) 100%); }
+        .day-2 .day-overlay { background: linear-gradient(135deg, rgba(161, 196, 253, 0.7) 0%, rgba(194, 233, 251, 0.7) 100%); }
+        .day-3 .day-overlay { background: linear-gradient(135deg, rgba(255, 236, 210, 0.7) 0%, rgba(252, 182, 159, 0.7) 100%); }
+        .day-4 .day-overlay { background: linear-gradient(135deg, rgba(132, 250, 176, 0.7) 0%, rgba(143, 211, 244, 0.7) 100%); }
+        .day-5 .day-overlay { background: linear-gradient(135deg, rgba(212, 252, 121, 0.7) 0%, rgba(150, 230, 161, 0.7) 100%); }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+            margin: 20px auto;
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .day-number {
+            font-size: 120px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            z-index: 0;
+            transition: transform 0.5s ease;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin: 40px 0;
+            position: relative;
+            width: 45%;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 55%;
+            transform: translateX(50px);
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px #667eea;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -52px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -52px;
+        }
+        
+        .floating-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #667eea;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 24px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            transition: transform 0.3s ease;
+            color: #333;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-dots {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        
+        .dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin: 15px 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.5);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-item::before {
+                left: -52px !important;
+                right: auto !important;
+            }
+            
+            .day-number {
+                font-size: 80px;
+                right: 20px;
+            }
+            
+            .content-card {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            .nav-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <a href="#hero" class="dot active"></a>
+        <a href="#day1" class="dot"></a>
+        <a href="#day2" class="dot"></a>
+        <a href="#day3" class="dot"></a>
+        <a href="#day4" class="dot"></a>
+        <a href="#day5" class="dot"></a>
+        <a href="#footer" class="dot"></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg" style="background-image: url('https://loremflickr.com/1920/1080/studio,audio')"></div>
+        <div class="hero-content w3-container">
+            <h1 class="w3-xxxlarge w3-animate-opacity">AUDIO PRODUCTION RETREAT</h1>
+            <p class="w3-xlarge w3-animate-opacity">Granja Tzikin - Tzununa, Sololá, Guatemala</p>
+            <p class="w3-large w3-animate-opacity">5 Days • Total Immersion • From Studio to Nature</p>
+            <div class="w3-margin-top">
+                <button class="cta-button w3-animate-opacity">
+                    <i class="fas fa-ticket-alt"></i> RESERVE YOUR SPOT
+                </button>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 1 -->
+    <section id="day1" class="day-section day-1">
+        <div class="day-bg" style="background-image: url('https://loremflickr.com/1920/1080/music,studio')"></div>
+        <div class="day-overlay"></div>
+        <div class="w3-container">
+            <div class="content-card">
+                <div class="day-number">01</div>
+                <div class="floating-icon">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+                <h2 class="w3-xxlarge">DAY 1: FOUNDATIONS</h2>
+                <h3 class="w3-xlarge">Production Fundamentals</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-desktop"></i> The Digital Studio</h4>
+                        <p>DAW Mastery: Session vs Arrangement View, Audio vs MIDI</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-music"></i> Practical Harmony</h4>
+                        <p>Scales and degrees (C-Am). Creating emotional progressions</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-drum"></i> Fundamental Rhythm</h4>
+                        <p>Creating a groovy beat. The Kick-Bass relationship</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 2 -->
+    <section id="day2" class="day-section day-2">
+        <div class="day-bg" style="background-image: url('https://loremflickr.com/1920/1080/sound,design')"></div>
+        <div class="day-overlay"></div>
+        <div class="w3-container">
+            <div class="content-card">
+                <div class="day-number">02</div>
+                <div class="floating-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h2 class="w3-xxlarge">DAY 2: BUILDING</h2>
+                <h3 class="w3-xlarge">Track Development</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-wave-square"></i> Sound Design</h4>
+                        <p>Essential synths. Creating pads, plucks and leads from scratch</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-project-diagram"></i> Structure & Automation</h4>
+                        <p>Song structure. Movement and dynamics</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-microphone-alt"></i> Field Recording</h4>
+                        <p>Incorporating unique sounds from the natural environment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 3 -->
+    <section id="day3" class="day-section day-3">
+        <div class="day-bg" style="background-image: url('https://loremflickr.com/1920/1080/mixer,audio')"></div>
+        <div class="day-overlay"></div>
+        <div class="w3-container">
+            <div class="content-card">
+                <div class="day-number">03</div>
+                <div class="floating-icon">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h2 class="w3-xxlarge">DAY 3: IDENTITY</h2>
+                <h3 class="w3-xlarge">Sonic Personality</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-search"></i> Finding Your Sound</h4>
+                        <p>Musical idiosyncrasy. Reference analysis</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-equals"></i> Audio Treatment with EQ</h4>
+                        <p>Corrective vs creative EQ. Making space for each element</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-sliders-h"></i> Practical Mixing</h4>
+                        <p>Levels, balance, panning and basic compression</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 4 -->
+    <section id="day4" class="day-section day-4">
+        <div class="day-bg" style="background-image: url('https://loremflickr.com/1920/1080/audio,equipment')"></div>
+        <div class="day-overlay"></div>
+        <div class="w3-container">
+            <div class="content-card">
+                <div class="day-number">04</div>
+                <div class="floating-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h2 class="w3-xxlarge">DAY 4: DEPTH</h2>
+                <h3 class="w3-xlarge">Advanced Mixing</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-expand-arrows-alt"></i> Effects & Depth</h4>
+                        <p>Reverb, Delay. Sends vs Inserts. Modulation</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-compress-arrows-alt"></i> Advanced Mixing</h4>
+                        <p>Sidechain compression. Saturation. Groups and buses</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-headphones"></i> Critical Monitoring</h4>
+                        <p>Training your ear. Details that make the difference</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 5 -->
+    <section id="day5" class="day-section day-5">
+        <div class="day-bg" style="background-image: url('https://loremflickr.com/1920/1080/mastering,audio')"></div>
+        <div class="day-overlay"></div>
+        <div class="w3-container">
+            <div class="content-card">
+                <div class="day-number">05</div>
+                <div class="floating-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2 class="w3-xxlarge">DAY 5: LAUNCH</h2>
+                <h3 class="w3-xlarge">The Final Touch</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-star"></i> Final Mastering</h4>
+                        <p>Final EQ, multiband compression, limiter. LUFS</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-share-alt"></i> Release</h4>
+                        <p>How to distribute your music. Digital platforms</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4><i class="fas fa-chart-line"></i> Next Steps</h4>
+                        <p>Action plan. Promotion strategies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="w3-container">
+            <h2 class="w3-xxlarge">Ready to Transform Your Sound?</h2>
+            <p class="w3-large">Join us for this 5-day journey at the magical Granja Tzikin</p>
+            
+            <div class="w3-row-padding w3-center w3-margin-top">
+                <div class="w3-half">
+                    <div class="pricing-card">
+                        <h3>RETREAT ONLY</h3>
+                        <h2 class="w3-xxxlarge">$400</h2>
+                        <p>5-day audio production retreat</p>
+                        <p>All meals included</p>
+                        <p>Workshop materials</p>
+                        <button class="cta-button w3-margin-top">
+                            <i class="fas fa-ticket-alt"></i> BOOK NOW
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="w3-half">
+                    <div class="pricing-card">
+                        <h3>RETREAT + ACCOMMODATION</h3>
+                        <h2 class="w3-xxxlarge">$500</h2>
+                        <p>Everything in Retreat Only</p>
+                        <p>+ Comfortable accommodation</p>
+                        <p>+ Evening networking sessions</p>
+                        <button class="cta-button w3-margin-top">
+                            <i class="fas fa-ticket-alt"></i> BOOK NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w3-margin-top">
+                <p class="w3-medium">Food included (USD $400) • Optional accommodation (USD $500 with lodging)</p>
+                <p class="w3-small w3-opacity">© 2025-2026 Audio Production Retreat - Granja Tzikin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for scroll animations and effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observer for content cards
+            const contentCards = document.querySelectorAll('.content-card');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const dayNumbers = document.querySelectorAll('.day-number');
+            const dots = document.querySelectorAll('.dot');
+            
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            contentCards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Parallax effect for background images
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.day-bg, .hero-bg');
+                
+                parallaxElements.forEach(function(el) {
+                    const rect = el.parentElement.getBoundingClientRect();
+                    const speed = 0.3;
+
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const localScroll = (window.innerHeight - rect.top) * speed;
+                        el.style.transform = `translateY(${localScroll}px)`;
+                    }
+                });
+                
+                // Rotate day numbers based on scroll position
+                dayNumbers.forEach(number => {
+                    const elementPosition = number.getBoundingClientRect().top + scrolled;
+                    const distance = scrolled - elementPosition + window.innerHeight;
+                    
+                    if (distance > 0) {
+                        const rotation = distance * 0.05;
+                        number.style.transform = `rotate(${rotation}deg)`;
+                    }
+                });
+                
+                // Update navigation dots based on scroll position
+                let current = '';
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrolled >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                    if (dot.getAttribute('href') === `#${current}`) {
+                        dot.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scrolling for navigation dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
