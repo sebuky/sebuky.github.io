@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Production Retreat - Granja Tzikin</title>
+    <title>Music Production Retreat - Granja Tzikin</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -37,6 +37,7 @@
             background-size: cover;
             background-position: center;
             z-index: -1;
+            transform: translateY(0);
         }
         
         .hero-content {
@@ -60,6 +61,7 @@
             background-size: cover;
             background-position: center;
             z-index: -2;
+            transform: translateY(0);
         }
         
         .day-overlay {
@@ -303,9 +305,9 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="hero-bg" style="background-image: url('https://loremflickr.com/1920/1080/studio,audio')"></div>
+        <div class="hero-bg" style="background-image: url('https://www.roadaffair.com/wp-content/uploads/2017/10/lake-atitlan-guatemala-shutterstock_189649244.jpg')"></div>
         <div class="hero-content w3-container">
-            <h1 class="w3-xxxlarge w3-animate-opacity">AUDIO PRODUCTION RETREAT</h1>
+            <h1 class="w3-xxxlarge w3-animate-opacity">MUSIC PRODUCTION RETREAT</h1>
             <p class="w3-xlarge w3-animate-opacity">Granja Tzikin - Tzununa, Sololá, Guatemala</p>
             <p class="w3-large w3-animate-opacity">5 Days • Total Immersion • From Studio to Nature</p>
             <div class="w3-margin-top">
@@ -480,7 +482,7 @@
                     <div class="pricing-card">
                         <h3>RETREAT ONLY</h3>
                         <h2 class="w3-xxxlarge">$400</h2>
-                        <p>5-day audio production retreat</p>
+                        <p>5-day music production retreat</p>
                         <p>All meals included</p>
                         <p>Workshop materials</p>
                         <button class="cta-button w3-margin-top">
@@ -505,7 +507,7 @@
             
             <div class="w3-margin-top">
                 <p class="w3-medium">Food included (USD $400) • Optional accommodation (USD $500 with lodging)</p>
-                <p class="w3-small w3-opacity">© 2025-2026 Audio Production Retreat - Granja Tzikin. All rights reserved.</p>
+                <p class="w3-small w3-opacity">© 2025-2026 Music Production Retreat - Granja Tzikin. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -540,18 +542,26 @@
                 observer.observe(item);
             });
             
-            // Parallax effect for background images
+            // Improved parallax effect for background images
             window.addEventListener('scroll', function() {
                 const scrolled = window.pageYOffset;
                 const parallaxElements = document.querySelectorAll('.day-bg, .hero-bg');
                 
                 parallaxElements.forEach(function(el) {
-                    const rect = el.parentElement.getBoundingClientRect();
-                    const speed = 0.3;
-
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        const localScroll = (window.innerHeight - rect.top) * speed;
-                        el.style.transform = `translateY(${localScroll}px)`;
+                    const section = el.parentElement;
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const speed = 0.5;
+                    
+                    // Calculate how much of this section is visible
+                    const viewportHeight = window.innerHeight;
+                    const scrollPosition = scrolled + viewportHeight;
+                    const sectionBottom = sectionTop + sectionHeight;
+                    
+                    // Only apply parallax when the section is in view
+                    if (scrollPosition > sectionTop && scrolled < sectionBottom) {
+                        const distance = scrolled - sectionTop;
+                        el.style.transform = `translateY(${distance * speed}px)`;
                     }
                 });
                 
