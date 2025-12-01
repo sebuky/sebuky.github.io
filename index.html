@@ -207,6 +207,69 @@
       transform: translateY(-5px);
       box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
     }
+    
+    /* MIX SECTION */
+    .mix-section {
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+      color: white;
+      text-align: center;
+    }
+    .mix-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+    .mix-column {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+    .mix-player-wrapper {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .mix-info {
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .mix-info h3 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+    .format-badge {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff6b6b, #ffcc00);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 5px;
+    }
+    .soundcloud-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ff5500;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #ff5500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s;
+    }
+    .soundcloud-link:hover {
+      background: #ff5500;
+      color: white;
+    }
 
     /* responsive tweaks */
     @media (max-width:900px){
@@ -228,6 +291,13 @@
       .album-description {
         margin: 20px 15px;
         padding: 20px;
+      }
+      .mix-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .mix-column {
+        width: 100%;
       }
     }
 
@@ -251,6 +321,7 @@
         <a class="w3-bar-item w3-button w3-padding-small" href="#videoclips" data-es="VIDEOCLIPS" data-en="VIDEOCLIPS">VIDEOCLIPS</a>
         <a class="w3-bar-item w3-button w3-padding-small" href="#showformats" data-es="FORMATOS DE SHOW" data-en="SHOW FORMATS">SHOW FORMATS</a>
         <a class="w3-bar-item w3-button w3-padding-small" href="#album" data-es="NUEVO ÁLBUM" data-en="NEW ALBUM">NUEVO ÁLBUM</a>
+        <a class="w3-bar-item w3-button w3-padding-small" href="#mix" data-es="MIX COMPLETO" data-en="FULL MIX">MIX COMPLETO</a>
         <a class="w3-bar-item w3-button w3-padding-small" href="#epks" data-es="EPK" data-en="EPK">EPK</a>
         <a class="w3-bar-item w3-button w3-padding-small" href="#contact" data-es="CONTACTO" data-en="CONTACT">CONTACT</a>
         
@@ -260,7 +331,7 @@
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
         
-        <a class="nav-cta w3-bar-item w3-button" href="#contact">BOOK / INFO</a>
+        <a class="nav-cta w3-bar-item w3-button" href="#contact" data-es="BOOK / INFO" data-en="BOOK / INFO">BOOK / INFO</a>
       </div>
 
       <!-- mobile menu toggle -->
@@ -271,45 +342,56 @@
 
     <!-- mobile nav (hidden by default) -->
     <div id="mobileNav" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style="margin-top:46px">
-      <a href="#videoclips" class="w3-bar-item w3-button">VIDEOCLIPS</a>
-      <a href="#showformats" class="w3-bar-item w3-button">SHOW FORMATS</a>
-      <a href="#album" class="w3-bar-item w3-button">NUEVO ÁLBUM</a>
-      <a href="#epks" class="w3-bar-item w3-button">EPK</a>
-      <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+      <a href="#videoclips" class="w3-bar-item w3-button" data-es="VIDEOCLIPS" data-en="VIDEOCLIPS">VIDEOCLIPS</a>
+      <a href="#showformats" class="w3-bar-item w3-button" data-es="FORMATOS DE SHOW" data-en="SHOW FORMATS">SHOW FORMATS</a>
+      <a href="#album" class="w3-bar-item w3-button" data-es="NUEVO ÁLBUM" data-en="NEW ALBUM">NUEVO ÁLBUM</a>
+      <a href="#mix" class="w3-bar-item w3-button" data-es="MIX COMPLETO" data-en="FULL MIX">MIX COMPLETO</a>
+      <a href="#epks" class="w3-bar-item w3-button" data-es="EPK" data-en="EPK">EPK</a>
+      <a href="#contact" class="w3-bar-item w3-button" data-es="CONTACTO" data-en="CONTACT">CONTACT</a>
     </div>
   </div>
 
   <!-- HERO -->
   <header class="hero" id="home" aria-hidden="false">
     <div class="hero-card fade-in" data-delay="0">
-      <h1>SEBUKY</h1>
-      <p>Nacido en Ecuador, criado en Barcelona. Sebuky fusiona ritmos sudamericanos con electrónica y algoritmos — música que muta en vivo.</p>
+      <h1 data-es="SEBUKY" data-en="SEBUKY">SEBUKY</h1>
+      <p data-es="Nacido en Ecuador, criado en Barcelona. Sebuky fusiona ritmos sudamericanos con electrónica y algoritmos — música que muta en vivo."
+         data-en="Born in Ecuador, raised in Barcelona. Sebuky blends South American rhythms with electronics and algorithms — music that mutates live.">
+        Nacido en Ecuador, criado en Barcelona. Sebuky fusiona ritmos sudamericanos con electrónica y algoritmos — música que muta en vivo.
+      </p>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
-        <a class="big-cta" href="#videoclips">Escuchar / Ver</a>
-        <a class="big-cta" href="#contact" style="background:transparent;color:#333;border:2px solid rgba(0,0,0,0.2)">Contratar</a>
-        <a class="big-cta" href="#album" style="background:#ff6b6b;color:white;">Nuevo Álbum</a>
+        <a class="big-cta" href="#videoclips" data-es="Escuchar / Ver" data-en="Listen / Watch">Escuchar / Ver</a>
+        <a class="big-cta" href="#contact" style="background:transparent;color:#333;border:2px solid rgba(0,0,0,0.2)" data-es="Contratar" data-en="Book">Contratar</a>
+        <a class="big-cta" href="#album" style="background:#ff6b6b;color:white;" data-es="Nuevo Álbum" data-en="New Album">Nuevo Álbum</a>
       </div>
 
-      <p style="margin-top:12px;font-size:13px; color:#555">Grabado en Guatemala, México, Países Bajos, Francia, España y más.</p>
+      <p style="margin-top:12px;font-size:13px; color:#555" 
+         data-es="Grabado en Guatemala, México, Países Bajos, Francia, España y más."
+         data-en="Recorded in Guatemala, Mexico, Netherlands, France, Spain and more.">
+        Grabado en Guatemala, México, Países Bajos, Francia, España y más.
+      </p>
     </div>
 
     <!-- subtle floating icons -->
     <span class="float-icon material-symbols-outlined" style="left:6%;top:26%;font-size:86px;color:var(--accent)">music_note</span>
-    
 
     <!-- scroll cue -->
     <div class="scroll-cue" role="button" aria-label="Ir a videoclip" onclick="document.getElementById('videoclips').scrollIntoView({behavior:'smooth'})">
       <div class="dot"></div>
-      <span style="font-size:20px;color:white;opacity:.9">VER</span>
+      <span style="font-size:20px;color:white;opacity:.9" data-es="VER" data-en="VIEW">VER</span>
     </div>
   </header>
 
   <!-- VIDEOCLIPS -->
   <section id="videoclips" class="w3-purple" style="color:white;">
     <div class="container">
-      <h2 class="section-title">VIDEOCLIPS</h2>
-      <p class="w3-center" style="opacity:.95;max-width:760px;margin:6px auto 22px">Selección de videoclips y registros en directo — mira, escucha y siente el contexto en vivo.</p>
+      <h2 class="section-title" data-es="VIDEOCLIPS" data-en="VIDEOCLIPS">VIDEOCLIPS</h2>
+      <p class="w3-center" style="opacity:.95;max-width:760px;margin:6px auto 22px"
+         data-es="Selección de videoclips y registros en directo — mira, escucha y siente el contexto en vivo."
+         data-en="Selection of videoclips and live recordings — watch, listen and feel the live context.">
+        Selección de videoclips y registros en directo — mira, escucha y siente el contexto en vivo.
+      </p>
 
       <div class="card hover-card fade-in">
         <h3>Gaya — Sebuky</h3>
@@ -317,7 +399,11 @@
           <iframe width="100%" height="360" src="https://www.youtube.com/embed/y39eGCsHibY"
                   title="Gaya - Sebuky" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
-        <p style="margin-top:12px">Producido en Barcelona. Instrumentos y letra por Sebuky. Grabado en mi gira 2024.</p>
+        <p style="margin-top:12px" 
+           data-es="Producido en Barcelona. Instrumentos y letra por Sebuky. Grabado en mi gira 2024."
+           data-en="Produced in Barcelona. Instruments and lyrics by Sebuky. Recorded on my 2024 tour.">
+          Producido en Barcelona. Instrumentos y letra por Sebuky. Grabado en mi gira 2024.
+        </p>
       </div>
 
       <div class="card hover-card fade-in">
@@ -326,7 +412,11 @@
           <iframe width="100%" height="360" src="https://www.youtube.com/embed/T58XJvyvmOY"
                   title="Rassemble - Sito Reno & Sebuky" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
-        <p style="margin-top:12px">Producido entre Barcelona y el Lago Atitlán — una simbiosis de paisajes y sonido.</p>
+        <p style="margin-top:12px" 
+           data-es="Producido entre Barcelona y el Lago Atitlán — una simbiosis de paisajes y sonido."
+           data-en="Produced between Barcelona and Lake Atitlán — a symbiosis of landscapes and sound.">
+          Producido entre Barcelona y el Lago Atitlán — una simbiosis de paisajes y sonido.
+        </p>
       </div>
     </div>
   </section>
@@ -334,11 +424,14 @@
   <!-- SHOW FORMATS -->
   <section id="showformats">
     <div class="container">
-      <h2 class="section-title">FORMATOS DE SHOW</h2>
+      <h2 class="section-title" data-es="FORMATOS DE SHOW" data-en="SHOW FORMATS">FORMATOS DE SHOW</h2>
 
       <div class="card hover-card fade-in">
         <h3>LIVE-SET</h3>
-        <p>Con instrumentos andinos y controladores electrónicos. Cada show es único.</p>
+        <p data-es="Con instrumentos andinos y controladores electrónicos. Cada show es único."
+           data-en="With Andean instruments and electronic controllers. Each show is unique.">
+          Con instrumentos andinos y controladores electrónicos. Cada show es único.
+        </p>
         <div class="w3-video-container" style="border-radius:8px;overflow:hidden;margin-top:12px">
           <iframe width="100%" height="320" src="https://www.youtube.com/embed/NdCUrNzvECo" title="Live Set Sebuky" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -346,7 +439,10 @@
 
       <div class="card hover-card fade-in">
         <h3>LIVE-BAND</h3>
-        <p>Músicos de raíces latinoamericanas que enriquecen la experiencia con percusión y voz en vivo.</p>
+        <p data-es="Músicos de raíces latinoamericanas que enriquecen la experiencia con percusión y voz en vivo."
+           data-en="Latin American rooted musicians enriching the experience with live percussion and vocals.">
+          Músicos de raíces latinoamericanas que enriquecen la experiencia con percusión y voz en vivo.
+        </p>
         <div class="w3-video-container" style="border-radius:8px;overflow:hidden;margin-top:12px">
           <iframe width="100%" height="320" src="https://www.youtube.com/embed/u_s1q63tDdE" title="Live Band Sebuky" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -354,7 +450,10 @@
 
       <div class="card hover-card fade-in">
         <h3>HYBRID - ECSTATIC DANCE</h3>
-        <p>DJ set + instrumentos en vivo: para un viaje de movimiento y conexión.</p>
+        <p data-es="DJ set + instrumentos en vivo: para un viaje de movimiento y conexión."
+           data-en="DJ set + live instruments: for a journey of movement and connection.">
+          DJ set + instrumentos en vivo: para un viaje de movimiento y conexión.
+        </p>
         <div class="w3-video-container" style="border-radius:8px;overflow:hidden;margin-top:12px">
           <iframe width="100%" height="320" src="https://www.youtube.com/embed/kQtlJQJAasA" title="Ecstatic Dance Sebuky" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -365,7 +464,7 @@
   <!-- SPOTIFY -->
   <section id="spotify" class="w3-purple" style="color:white;">
     <div class="container">
-      <h2 class="section-title">SEBUKY EN SPOTIFY</h2>
+      <h2 class="section-title" data-es="SEBUKY EN SPOTIFY" data-en="SEBUKY ON SPOTIFY">SEBUKY EN SPOTIFY</h2>
       <div class="card fade-in" style="background:transparent;border:none;padding:0">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0fgoaoDvs0me2kQoU4C9dz?utm_source=generator" width="100%" height="380" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
@@ -375,28 +474,41 @@
   <!-- NEW ALBUM SECTION -->
   <section id="album" class="album-section">
     <div class="container">
-      <h2 class="section-title" style="color:white;">NUEVO ÁLBUM</h2>
+      <h2 class="section-title" style="color:white;" data-es="NUEVO ÁLBUM" data-en="NEW ALBUM">NUEVO ÁLBUM</h2>
       
       <h1 class="album-title fade-in">ONE LAND, THREE SPIRITS</h1>
-      <p class="album-subtitle fade-in" data-delay="200">Un viaje de Ecstatic Dance creado con intención pura a orillas del Lago Atitlán, Guatemala</p>
+      <p class="album-subtitle fade-in" data-delay="200"
+         data-es="Un viaje de Ecstatic Dance creado con intención pura a orillas del Lago Atitlán, Guatemala"
+         data-en="An Ecstatic Dance journey created with pure intention on the shores of Lake Atitlán, Guatemala">
+        Un viaje de Ecstatic Dance creado con intención pura a orillas del Lago Atitlán, Guatemala
+      </p>
       
       <div class="album-player-container fade-in" data-delay="400">
         <iframe style="border: 0; width: 350px; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=166573231/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://sebuky.bandcamp.com/album/one-land-three-spirits-an-ecstatic-dance-journey">One Land, Three Spirits: An Ecstatic Dance Journey by Sebuky</a></iframe>
       </div>
       
       <div class="album-description fade-in" data-delay="600">
-        <h3>EL VIAJE SONORO</h3>
-        <p>Este álbum es un recorrido orgánico diseñado para guiar una sesión completa de Ecstatic Dance. Desde la calma inicial hasta el éxtasis colectivo, cada track sirve como puente entre tradiciones ancestrales y sonidos contemporáneos.</p>
+        <h3 data-es="EL VIAJE SONORO" data-en="THE SOUND JOURNEY">EL VIAJE SONORO</h3>
+        <p data-es="Este álbum es un recorrido orgánico diseñado para guiar una sesión completa de Ecstatic Dance. Desde la calma inicial hasta el éxtasis colectivo, cada track sirve como puente entre tradiciones ancestrales y sonidos contemporáneos."
+           data-en="This album is an organic journey designed to guide a complete Ecstatic Dance session. From initial calm to collective ecstasy, each track serves as a bridge between ancestral traditions and contemporary sounds.">
+          Este álbum es un recorrido orgánico diseñado para guiar una sesión completa de Ecstatic Dance. Desde la calma inicial hasta el éxtasis colectivo, cada track sirve como puente entre tradiciones ancestrales y sonidos contemporáneos.
+        </p>
         
         <ul>
-          <li><strong>Una tierra:</strong> Porque América es un solo continente, unido por raíces profundas</li>
-          <li><strong>Tres espíritus:</strong> Norte, Centro y Sur, cada uno con su alma única pero conectada</li>
-          <li><strong>Progresión en quintas:</strong> El álbum completo sigue un viaje armónico de C a G, D, y más...</li>
-          <li><strong>Instrumentos reales:</strong> Cuatro venezolano, quenas andinas, charango boliviano, flautas nativas y más</li>
+          <li data-es="<strong>Una tierra:</strong> Porque América es un solo continente, unido por raíces profundas"
+              data-en="<strong>One land:</strong> Because America is one continent, united by deep roots"><strong>Una tierra:</strong> Porque América es un solo continente, unido por raíces profundas</li>
+          <li data-es="<strong>Tres espíritus:</strong> Norte, Centro y Sur, cada uno con su alma única pero conectada"
+              data-en="<strong>Three spirits:</strong> North, Central and South, each with its unique but connected soul"><strong>Tres espíritus:</strong> Norte, Centro y Sur, cada uno con su alma única pero conectada</li>
+          <li data-es="<strong>Progresión en quintas:</strong> El álbum completo sigue un viaje armónico de C a G, D, y más..."
+              data-en="<strong>Progression in fifths:</strong> The entire album follows a harmonic journey from C to G, D, and beyond..."><strong>Progresión en quintas:</strong> El álbum completo sigue un viaje armónico de C a G, D, y más...</li>
+          <li data-es="<strong>Instrumentos reales:</strong> Cuatro venezolano, quenas andinas, charango boliviano, flautas nativas y más"
+              data-en="<strong>Real instruments:</strong> Venezuelan cuatro, Andean quenas, Bolivian charango, native flutes and more"><strong>Instrumentos reales:</strong> Cuatro venezolano, quenas andinas, charango boliviano, flautas nativas y más</li>
         </ul>
         
         <p style="text-align:center; margin-top:25px;">
-          <a href="https://sebuky.bandcamp.com/album/one-land-three-spirits-an-ecstatic-dance-journey" target="_blank" class="album-cta">
+          <a href="https://sebuky.bandcamp.com/album/one-land-three-spirits-an-ecstatic-dance-journey" target="_blank" class="album-cta"
+             data-es="ESCUCHAR ÁLBUM COMPLETO EN BANDCAMP"
+             data-en="LISTEN TO FULL ALBUM ON BANDCAMP">
             ESCUCHAR ÁLBUM COMPLETO EN BANDCAMP
           </a>
         </p>
@@ -404,11 +516,74 @@
     </div>
   </section>
 
+  <!-- MIX SECTION -->
+  <section id="mix" class="mix-section">
+    <div class="container">
+      <h2 class="section-title" style="color:white;" data-es="MIX COMPLETO" data-en="FULL MIX">MIX COMPLETO</h2>
+      
+      <p class="album-subtitle fade-in" data-delay="200"
+         data-es="Una sesión continua de 1h mezclada como un DJ set. Ideal para bailar sin interrupciones."
+         data-en="A continuous 1h session mixed like a DJ set. Perfect for dancing without interruptions.">
+        Una sesión continua de 1h mezclada como un DJ set. Ideal para bailar sin interrupciones.
+      </p>
+      
+      <div class="mix-container fade-in" data-delay="400">
+        <div class="mix-column">
+          <div class="mix-player-wrapper">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2222044289&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+              <a href="https://soundcloud.com/sebuky" title="Sebuky" target="_blank" style="color: #cccccc; text-decoration: none;">Sebuky</a> · 
+              <a href="https://soundcloud.com/sebuky/one-land-three-spirits-an-ecstatic-dance-journey" title="One Land, Three Spirits: An Ecstatic Dance Journey" target="_blank" style="color: #cccccc; text-decoration: none;">One Land, Three Spirits: An Ecstatic Dance Journey</a>
+            </div>
+          </div>
+          
+          <a href="https://soundcloud.com/sebuky/one-land-three-spirits-an-ecstatic-dance-journey" target="_blank" class="soundcloud-link"
+             data-es="Escuchar en SoundCloud"
+             data-en="Listen on SoundCloud">
+            Escuchar en SoundCloud
+          </a>
+        </div>
+        
+        <div class="mix-column">
+          <div class="mix-info">
+            <h3 data-es="¿POR QUÉ DOS FORMATOS?" data-en="WHY TWO FORMATS?">¿POR QUÉ DOS FORMATOS?</h3>
+            <p data-es="Este álbum está disponible en dos versiones complementarias:"
+               data-en="This album is available in two complementary versions:">
+              Este álbum está disponible en dos versiones complementarias:
+            </p>
+            
+            <p><span class="format-badge">TRACKS INDIVIDUALES</span></p>
+            <p data-es="<strong>En Bandcamp:</strong> Cada tema por separado para DJs que quieran usar pistas específicas en sus sets. Control total sobre la selección y mezcla."
+               data-en="<strong>On Bandcamp:</strong> Individual tracks for DJs who want to use specific songs in their sets. Full control over selection and mixing.">
+              <strong>En Bandcamp:</strong> Cada tema por separado para DJs que quieran usar pistas específicas en sus sets. Control total sobre la selección y mezcla.
+            </p>
+            
+            <p><span class="format-badge">MIX COMPLETO 1H</span></p>
+            <p data-es="<strong>En SoundCloud:</strong> Sesión continua mezclada profesionalmente. Perfecta para Ecstatic Dance, yoga, meditación o simplemente disfrutar el viaje completo sin interrupciones."
+               data-en="<strong>On SoundCloud:</strong> Continuous session professionally mixed. Perfect for Ecstatic Dance, yoga, meditation or simply enjoying the full journey without interruptions.">
+              <strong>En SoundCloud:</strong> Sesión continua mezclada profesionalmente. Perfecta para Ecstatic Dance, yoga, meditación o simplemente disfrutar el viaje completo sin interrupciones.
+            </p>
+            
+            <p style="margin-top:20px; font-style: italic;"
+               data-es="¿Eres DJ? ¡Los tracks individuales están disponibles en alta calidad! Contáctame si quieres usarlos en tus sets."
+               data-en="Are you a DJ? Individual tracks are available in high quality! Contact me if you want to use them in your sets.">
+              ¿Eres DJ? ¡Los tracks individuales están disponibles en alta calidad! Contáctame si quieres usarlos en tus sets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EPK -->
   <section id="epks">
     <div class="container">
-      <h2 class="section-title">KIT DE PRENSA (EPK)</h2>
-      <p class="w3-center" style="max-width:760px;margin:0 auto 14px">Descarga el press-kit en tu idioma preferido (EN / ES / FR).</p>
+      <h2 class="section-title" data-es="KIT DE PRENSA (EPK)" data-en="PRESS KIT (EPK)">KIT DE PRENSA (EPK)</h2>
+      <p class="w3-center" style="max-width:760px;margin:0 auto 14px"
+         data-es="Descarga el press-kit en tu idioma preferido (EN / ES / FR)."
+         data-en="Download the press-kit in your preferred language (EN / ES / FR).">
+        Descarga el press-kit en tu idioma preferido (EN / ES / FR).
+      </p>
 
       <div class="pdf-grid fade-in">
         <div class="pdf-item">
@@ -436,7 +611,7 @@
   <!-- GALLERY -->
   <section id="pictures">
     <div class="container">
-      <h2 class="section-title">GALERÍA & MOMENTOS</h2>
+      <h2 class="section-title" data-es="GALERÍA & MOMENTOS" data-en="GALLERY & MOMENTS">GALERÍA & MOMENTOS</h2>
 
       <div class="slides fade-in">
         <div class="mySlides">
@@ -455,25 +630,33 @@
   <!-- CONTACT -->
   <section id="contact" class="w3-light-grey">
     <div class="container">
-      <h2 class="section-title">CONTACTO</h2>
-      <p class="w3-center" style="max-width:760px;margin:0 auto 14px">¿Fan o promotor? ¿quieres booking o press? Escríbeme o mira los enlaces.</p>
+      <h2 class="section-title" data-es="CONTACTO" data-en="CONTACT">CONTACTO</h2>
+      <p class="w3-center" style="max-width:760px;margin:0 auto 14px"
+         data-es="¿Fan o promotor? ¿quieres booking o press? Escríbeme o mira los enlaces."
+         data-en="Fan or promoter? Want booking or press? Write me or check the links.">
+        ¿Fan o promotor? ¿quieres booking o press? Escríbeme o mira los enlaces.
+      </p>
 
       <div class="w3-row" style="gap:18px;display:flex;flex-wrap:wrap;justify-content:center">
         <div class="w3-card card fade-in" style="max-width:420px;">
           <p><span class="material-symbols-outlined" style="vertical-align:middle">location_on</span> Barcelona, Spain</p>
           <p><span class="material-symbols-outlined">call</span> +34 717102778</p>
           <p><span class="material-symbols-outlined">mail</span> <a href="mailto:info@sebuky.com">info@sebuky.com</a></p>
-          <a class="big-cta" href="mailto:info@sebuky.com">Enviar mensaje</a>
+          <a class="big-cta" href="mailto:info@sebuky.com" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</a>
         </div>
 
         <div class="w3-card card fade-in" style="max-width:420px;">
-          <h4>Redes</h4>
-          <p>Sígueme para novedades, fechas y fragmentos exclusivos.</p>
+          <h4 data-es="Redes" data-en="Social Media">Redes</h4>
+          <p data-es="Sígueme para novedades, fechas y fragmentos exclusivos."
+             data-en="Follow me for news, dates and exclusive snippets.">
+            Sígueme para novedades, fechas y fragmentos exclusivos.
+          </p>
           <div style="display:flex;gap:10px;align-items:center">
             <a href="https://www.instagram.com/sebuky" target="_blank" class="w3-button"><span class="material-symbols-outlined">photo_camera</span></a>
             <a href="https://www.youtube.com/sebuky" target="_blank" class="w3-button"><span class="material-symbols-outlined">play_arrow</span></a>
             <a href="https://open.spotify.com/artist/5dE4N9qnixhlmM2CuGrfCw" target="_blank" class="w3-button"><span class="material-symbols-outlined">music_note</span></a>
             <a href="https://sebuky.bandcamp.com" target="_blank" class="w3-button"><span class="material-symbols-outlined">album</span></a>
+            <a href="https://soundcloud.com/sebuky" target="_blank" class="w3-button"><span class="material-symbols-outlined">wave</span></a>
           </div>
         </div>
       </div>
@@ -488,10 +671,14 @@
         <a href="https://www.instagram.com/sebuky" target="_blank" aria-label="instagram"><span class="material-symbols-outlined">photo_camera</span></a>
         <a href="https://open.spotify.com" target="_blank" aria-label="spotify"><span class="material-symbols-outlined">music_note</span></a>
         <a href="https://sebuky.bandcamp.com" target="_blank" aria-label="bandcamp"><span class="material-symbols-outlined">album</span></a>
+        <a href="https://soundcloud.com/sebuky" target="_blank" aria-label="soundcloud"><span class="material-symbols-outlined">wave</span></a>
       </div>
-      <div style="opacity:.8">Desarrollado con <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" style="color:var(--accent)">w3.css</a></div>
+      <div style="opacity:.8">
+        <span data-es="Desarrollado con" data-en="Developed with">Desarrollado con</span>
+        <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" style="color:var(--accent)">w3.css</a>
+      </div>
       <div style="opacity:.6; margin-top:10px; font-size:14px;">
-        © 2024 Sebuky • <em>One Land, Three Spirits</em> disponible ahora en Bandcamp
+        © 2024 Sebuky • <em data-es="One Land, Three Spirits disponible ahora" data-en="One Land, Three Spirits available now">One Land, Three Spirits disponible ahora</em>
       </div>
     </div>
   </footer>
@@ -499,7 +686,7 @@
   <!-- Floating contact quick action -->
   <div class="float-contact" role="button" onclick="location.href='mailto:info@sebuky.com'">
     <span class="material-symbols-outlined">mail</span>
-    <strong style="font-size:14px">Contactar</strong>
+    <strong style="font-size:14px" data-es="Contactar" data-en="Contact">Contactar</strong>
   </div>
 
   <!-- small util scripts -->
@@ -517,7 +704,6 @@
       const obs = new IntersectionObserver((entries, o) => {
         entries.forEach(en => {
           if(en.isIntersecting){
-            // small stagger based on index among .fade-in elements in that root
             const i = all.indexOf(en.target);
             const delay = Math.min(600, (i % 6) * 80);
             en.target.style.transitionDelay = delay+'ms';
@@ -556,41 +742,56 @@
       document.getElementById('progress').style.width = pct + '%';
     });
 
-    /* Sistema de idiomas mejorado */
+    /* Sistema de idiomas MEJORADO */
     document.addEventListener('DOMContentLoaded', function() {
       const langButtons = document.querySelectorAll('.lang-btn');
-      let currentLang = 'es';
+      let currentLang = localStorage.getItem('preferredLang') || 'es';
       
-      langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const lang = this.getAttribute('data-lang');
-          changeLanguage(lang);
-          
-          // Actualizar botones activos
-          langButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-        });
-      });
-      
+      // Función para cambiar idioma
       function changeLanguage(lang) {
         currentLang = lang;
+        localStorage.setItem('preferredLang', lang);
         document.documentElement.lang = lang;
         
         // Actualizar todos los elementos con atributos de idioma
         document.querySelectorAll('[data-es], [data-en]').forEach(element => {
           if (element.hasAttribute(`data-${lang}`)) {
             const text = element.getAttribute(`data-${lang}`);
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            
+            // Si el elemento contiene HTML (como <strong> tags)
+            if (text.includes('<')) {
+              element.innerHTML = text;
+            } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
               element.placeholder = text;
+            } else if (element.tagName === 'A' && element.hasAttribute('href')) {
+              // Para enlaces, solo cambiar el texto, no el href
+              element.textContent = text;
             } else {
               element.textContent = text;
             }
           }
         });
+        
+        // Actualizar botones activos
+        langButtons.forEach(btn => {
+          if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
       }
       
-      // Inicializar con español
-      changeLanguage('es');
+      // Configurar botones de idioma
+      langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          changeLanguage(lang);
+        });
+      });
+      
+      // Inicializar con el idioma guardado o español
+      changeLanguage(currentLang);
     });
   </script>
 </body>
