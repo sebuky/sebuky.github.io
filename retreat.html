@@ -1,128 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Embody Your Aliveness Retreat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Embody Your Aliveness Retreat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  <style>
-    body {font-family: "Helvetica", sans-serif;}
+<style>
+body {font-family: "Helvetica", sans-serif; scroll-behavior:smooth; background: #FAF9F6;}
 
-   .carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      margin-top: 30px;
-    }
+  .whatsapp-btn {
+    background: #25D366;
+    color: white;
+    border-radius: 30px;
+    transition: 0.3s;
+  }
 
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
+  .whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+  }
 
-    .carousel-item {
-      min-width: 320px;
-      margin: 0 10px;
-      text-align: center;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .carousel-title {
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    /* flechas */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 18px;
-      z-index: 10;
-    }
-
-    .carousel-btn:hover {
-      background: black;
-    }
-
-    .carousel-btn.left {
-      left: 10px;
-    }
-
-    .carousel-btn.right {
-      right: 10px;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .hero {
-      height: 85vh;
-      background-image: url('./retreat_pictures/colibri_title.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-
-    .overlay {
-      background: rgba(0,0,0,0.5);
-      padding: 40px;
-      border-radius: 10px;
-      backdrop-filter: blur(4px);
-    }
-
-    .lang-btn {
-      cursor:pointer;
-      margin-left:10px;
-    }
-  </style>
-</head>
-
-<script>
-let position = 0;
-
-function moveSlide(direction) {
-  const track = document.getElementById("carouselTrack");
-  const items = document.querySelectorAll(".carousel-item");
-  const wrapper = document.querySelector(".carousel-wrapper");
-
-  const itemWidth = items[0].offsetWidth + 20;
-
-  const visibleItems = Math.max(1, Math.floor(wrapper.offsetWidth / itemWidth));
-  const maxPosition = Math.max(0, items.length - visibleItems);
-
-  position += direction;
-
-  if (position < 0) position = 0;
-  if (position > maxPosition) position = maxPosition;
-
-  track.style.transform = `translateX(-${position * itemWidth}px)`;
+/* PARALLAX */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
-</script>
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background-image: url('./retreat_pictures/colibri_title.jpg');
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.5);
+  padding:40px;
+  border-radius:10px;
+  backdrop-filter: blur(6px);
+}
+
+/* ANIMACIONES */
+.fade-in {
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease;
+}
+.fade-in.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* CARRUSEL */
+.carousel-wrapper {
+  position:relative;
+  overflow:hidden;
+}
+
+.carousel-track {
+  display:flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width:300px;
+  margin:0 10px;
+  text-align:center;
+  transition: transform 0.3s;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.carousel-title {
+  margin-top:10px;
+}
+
+/* BOTONES */
+.carousel-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.6);
+  color:white;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+  border-radius:50%;
+  z-index:10;
+}
+
+.carousel-btn:hover {background:black;}
+.left {left:10px;}
+.right {right:10px;}
+
+.lang-btn {cursor:pointer; margin-left:10px;}
+
+.investment-section {
+  background: linear-gradient(135deg, #F4EDE4, #FAF9F6);
+  color: #1F3D3B;
+}
+
+footer {
+  background: #1F3D3B;
+  color: #FAF9F6;
+}
+
+</style>
+</head>
 
 <body>
 
-<!-- Language Selector -->
+<!-- LANGUAGE -->
 <div class="w3-top w3-padding w3-right-align w3-white">
   <span class="lang-btn" onclick="setLang('en')">EN</span>
   <span class="lang-btn" onclick="setLang('es')">ES</span>
@@ -130,149 +134,119 @@ function moveSlide(direction) {
 </div>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="overlay">
-    <h1 class="w3-xxxlarge"
-        data-en="Embody Your Aliveness"
+<div class="hero parallax">
+  <div class="overlay fade-in">
+    <h1 data-en="Embody Your Aliveness"
         data-es="Encarnar tu Vitalidad"
         data-cat="Encarnar la teva vitalitat">
         Embody Your Aliveness
     </h1>
 
-    <p class="w3-large"
-       data-en="Solstice Retreat in Spain"
+    <p data-en="Solstice Retreat in Spain"
        data-es="Retiro de Solsticio en España"
        data-cat="Retir de Solstici a Espanya">
        Solstice Retreat in Spain
     </p>
-
-    <p data-en="Thursday afternoon — Sunday midday"
-       data-es="Jueves tarde — Domingo mediodía"
-       data-cat="Dijous tarda — Diumenge migdia">
-       Thursday afternoon — Sunday midday
-    </p>
+    <p data-en="18 - 21 June"
+       data-es="18 - 21 Junio"
+       data-cat="18 - 21 Juny">18 - 21 June </p>
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="w3-container w3-padding-64 w3-light-grey">
-  <div class="w3-content">
-    <h2 data-en="The Experience"
-        data-es="La Experiencia"
-        data-cat="L’Experiència">The Experience</h2>
+<div class="w3-container w3-padding-64 w3-light-grey fade-in">
+<div class="w3-content">
 
-    <p data-en="A journey to land in your body, open your heart, express your truth and reconnect with your natural aliveness."
-       data-es="Un viaje para habitar el cuerpo, abrir el corazón y reconectar con tu vitalidad."
-       data-cat="Un viatge per habitar el cos i reconnectar amb la teva vitalitat.">A journey to land in your body, open your heart, express your truth and reconnect with your natural aliveness.
-    </p>
+<h2 data-en="The Experience" data-es="La Experiencia" data-cat="L’Experiència">
+The Experience
+</h2>
 
-    <p data-en="Through movement, music, stillness and connection, we create a space where you can soften, awaken and fully embody yourself."
-       data-es="A través del movimiento, la música y la presencia, creamos un espacio para abrirte y despertar."
-       data-cat="Mitjançant moviment i música, creem un espai per obrir-te i despertar.">Through movement, music, stillness and connection, we create a space where you can soften, awaken and fully embody yourself.
-    </p>
-    
-  </div>
+<p data-en="This retreat is an invitation to slow down, reconnect with your body and remember what it feels like to be fully alive."
+   data-es="Este retiro es una invitación a parar, reconectar con tu cuerpo y recordar lo que se siente al estar verdaderamente vivo."
+   data-cat="Aquest retir és una invitació a parar, reconnectar amb el teu cos i recordar què se sent en estar plenament viu.">
+This retreat is an invitation to slow down, reconnect with your body and remember what it feels like to be fully alive.
+</p>
+
+<p data-en="Through yoga, conscious movement, music and deep presence, we create a safe and inspiring space where you can open your heart, express yourself freely and explore your inner world."
+   data-es="A través del yoga, el movimiento consciente, la música y la presencia, creamos un espacio seguro e inspirador donde abrir el corazón, expresarte libremente y explorar tu mundo interior."
+   data-cat="Mitjançant el ioga, el moviment conscient, la música i la presència, creem un espai segur i inspirador on obrir el cor, expressar-te lliurement i explorar el teu món interior.">
+Through yoga, conscious movement, music and deep presence, we create a safe and inspiring space where you can open your heart, express yourself freely and explore your inner world.
+</p>
+
+<p data-en="It is a space to soften, to release what no longer serves you, and to reconnect with your natural joy, creativity and vitality."
+   data-es="Es un espacio para soltar lo que ya no necesitas y reconectar con tu alegría, creatividad y vitalidad natural."
+   data-cat="És un espai per deixar anar el que ja no necessites i reconnectar amb la teva alegria, creativitat i vitalitat natural.">
+It is a space to soften, to release what no longer serves you, and to reconnect with your natural joy, creativity and vitality.
+</p>
+
 </div>
+</div>
+
+<!-- PARALLAX BREAK -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/yoga_sanne_2.jpeg');"></div>
 
 <!-- PROGRAM -->
-<div class="w3-container w3-padding-64">
-  <div class="w3-content">
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
 
-    <h2 data-en="What’s Included"
-        data-es="Qué incluye"
-        data-cat="Què inclou">
-        What’s Included
-    </h2>
+<h2 data-en="What’s Included" data-es="Qué incluye" data-cat="Què inclou">What’s Included</h2>
 
-    <div class="w3-row-padding" style="margin-top:30px;">
+<ul class="w3-ul">
+<li data-en="3 wholesome meals per day" data-es="3 comidas nutritivas al día" data-cat="3 àpats nutritius al dia">
+  3 wholesome meals per day
+</li>
 
-      <!-- IMAGEN (1/3) -->
-      <div class="w3-col m4 s12">
+<li data-en="Private or shared accommodations" data-es="Habitaciones privadas o compartidas" data-cat="Habitacions privades o compartides">
+  Private or shared accommodations
+</li>
+<li data-en="Daily yoga & meditation" data-es="Yoga y meditación diaria" data-cat="Ioga i meditació diària">Daily yoga & meditation</li>
+<li data-en="Movement workshops" data-es="Talleres de movimiento" data-cat="Tallers de moviment">Movement workshops</li>
+<li data-en="Cacao ceremony" data-es="Ceremonia de cacao" data-cat="Cerimònia de cacau">Cacao ceremony</li>
+<li data-en="Ecstatic Dance" data-es="Ecstatic Dance" data-cat="Ecstatic Dance">Ecstatic Dance</li>
+<li data-en="Live music" data-es="Música en vivo" data-cat="Música en directe">Live music</li>
+<li data-en="Integration circles" data-es="Círculos de integración" data-cat="Cercles d’integració">Integration circles</li>
+</ul>
 
-        <img src="./retreat_pictures/tejido_maya.jpg" 
-             style="width:100%; border-radius:10px; object-fit:cover; height:100%;">
-
-      </div>
-      <!-- TEXTO (2/3) -->
-      <div class="w3-col m8 s12">
-
-        <ul class="w3-ul">
-          
-          <li>Daily yoga & meditation practices</li>
-          <li>Embodiment & movement workshops</li>
-          <li>Cacao ceremony</li>
-          <li>1 Ecstatic Dance journey</li>
-          <li>1 Live concert experience</li>
-          <li>Sharing & integration circles</li>
-          <li>Time to rest, connect and enjoy nature</li>
-        </ul>
-
-      </div>
-
-      
-
-    </div>
-
-  </div>
+</div>
 </div>
 
-<div class="w3-container w3-padding-64 w3-light-grey">
-  <div class="w3-content w3-center">
+<!-- CARRUSEL -->
+<div class="w3-container w3-padding-64 w3-light-grey fade-in">
+<div class="w3-content w3-center">
 
-    <h2>Moments of connection, expression and presence.</h2>
+<h2 data-en="Moments of connection"
+    data-es="Momentos de conexión"
+    data-cat="Moments de connexió">Moments of connection</h2>
 
-    
+<div class="carousel-wrapper">
 
-    <div class="carousel-wrapper">
+<button class="carousel-btn left" onclick="moveSlide(-1)">❮</button>
+<button class="carousel-btn right" onclick="moveSlide(1)">❯</button>
 
-     <button class="carousel-btn left" onclick="moveSlide(-1)">❮</button>
-    <button class="carousel-btn right" onclick="moveSlide(1)">❯</button>
+<div class="carousel-track" id="track">
 
-      <div class="carousel-track" id="carouselTrack">
-
-        <div class="carousel-item">
-          <img src="./retreat_pictures/cacao_circle_nature_2.jpg">
-          <div class="carousel-title">Cacao Ceremony</div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="./retreat_pictures/playing_dj_set.jpeg">
-          <div class="carousel-title">Live Music</div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="./retreat_pictures/playing_ecstatic_dance.jpg">
-          <div class="carousel-title">Ecstatic Dance</div>
-        </div>
-        <div class="carousel-item">
-          <img src="./retreat_pictures/yoga_sanne.jpg">
-          <div class="carousel-title">Yoga</div>
-        </div>
-        <div class="carousel-item">
+<!-- items -->
+<div class="carousel-item"><img src="./retreat_pictures/cacao_circle_nature_2.jpg"><div data-en="Cacao Ceremony" data-es="Ceremonia de cacao" data-cat="Cerimònia de cacau">Cacao Ceremony</div></div>
+<div class="carousel-item"><img src="./retreat_pictures/playing_dj_set.jpeg"><div data-en="Live Music" data-es="Música en vivo" data-cat="Música en directe">Live Music</div></div>
+<div class="carousel-item"><img src="./retreat_pictures/playing_ecstatic_dance.jpg"><div data-en="Ecstatic Dance" data-es="Ecstatic Dance" data-cat="Ecstatic Dance">Ecstatic Dance</div></div>
+<div class="carousel-item"><img src="./retreat_pictures/yoga_sanne_4.jpeg"><div data-en="Yoga" data-es="Yoga" data-cat="Ioga">Yoga</div></div>
+<div class="carousel-item">
           <img src="./retreat_pictures/family.jpg">
-          <div class="carousel-title">Family Friendly Space</div>
+          <div data-en="Family Friendly Space" data-es="Espacio familiar" data-cat="Espai familiar">Family Friendly Space</div>
         </div>
 
-      </div>
-    </div>
-
-  </div>
+</div>
+</div>
+</div>
 </div>
 
 <!-- PRICE -->
-<div class="w3-container w3-padding-64 w3-center w3-black">
-  <h2 data-en="Investment"
-      data-es="Precio"
-      data-cat="Preu">Investment</h2>
-
-  <h1>900€</h1>
-
-  <p data-en="Includes full retreat program. Accommodation & food not included."
-     data-es="Incluye el programa. Alojamiento y comida aparte."
-     data-cat="Inclou el programa. Allotjament a part.">Includes full retreat program. Accommodation & food not included.
-  </p>
+<div class="w3-container w3-padding-64 w3-center fade-in investment-section">
+<h2 data-en="Investment" data-es="Precio" data-cat="Preu">Investment</h2>
+<h1>900€</h1>
+<p data-en="Full program included"
+   data-es="Programa incluido"
+   data-cat="Programa inclòs">Full program included</p>
 </div>
-
 <!-- FACILITATORS -->
 <div class="w3-container w3-padding-64">
   <div class="w3-content w3-center">
@@ -286,36 +260,66 @@ function moveSlide(direction) {
     <img src="./retreat_pictures/caca_circle_nature_2.jpg" style="width:45%; border-radius:10px;">
   </div>
 </div>
-
 <!-- CTA -->
-<div class="w3-container w3-padding-64 w3-center w3-light-grey">
-  <h2 data-en="Join Us"
-      data-es="Únete"
-      data-cat="Uneix-te">Join Us</h2>
+<div class="w3-container w3-padding-64 w3-center fade-in">
 
-  <p data-en="Limited spots available"
-     data-es="Plazas limitadas"
-     data-cat="Places limitades">Limited spots available</p>
+<h2 data-en="Join Us" data-es="Únete" data-cat="Uneix-te">
+Join Us
+</h2>
 
-  <button class="w3-button w3-black w3-padding-large">
-    Apply Now
+<p data-en="Limited spots available" data-es="Plazas limitadas" data-cat="Places limitades">
+Limited spots available
+</p>
+
+<a href="https://wa.me/34717102778" target="_blank">
+  <button class="w3-button w3-padding-large whatsapp-btn"
+          data-en="Apply via WhatsApp"
+          data-es="Aplicar por WhatsApp"
+          data-cat="Aplica per WhatsApp">
+    Apply via WhatsApp
   </button>
-</div>
+</a>
 
-<!-- FOOTER -->
-<footer class="w3-center w3-padding-32 w3-black">
-  <p>Contact: sebuky@sebuky.com</p>
-  <p>Whatsapp: +34 717 102 778</p>
+</div>
+<footer class="w3-center w3-padding-32">
+<p>Contact: sebuky@sebuky.com</p>
 </footer>
 
-<!-- LANGUAGE SCRIPT -->
 <script>
-function setLang(lang) {
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerText = el.getAttribute("data-" + lang);
-  });
+/* LANG */
+function setLang(lang){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.innerText=el.getAttribute("data-"+lang);
+});
 }
 
+/* CAROUSEL LOOP INFINITO */
+let index=0;
+
+function moveSlide(dir){
+const track=document.getElementById("track");
+const items=document.querySelectorAll(".carousel-item");
+
+index+=dir;
+
+if(index<0) index=items.length-1;
+if(index>=items.length) index=0;
+
+const width=items[0].offsetWidth+20;
+
+track.style.transform=`translateX(-${index*width}px)`;
+}
+
+/* SCROLL ANIMATION */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 </script>
 
 </body>
