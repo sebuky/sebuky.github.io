@@ -8,31 +8,31 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
-body {font-family: "Helvetica", sans-serif; scroll-behavior:smooth; background: #FAF9F6;}
+body {
+  font-family: "Helvetica", sans-serif;
+  scroll-behavior:smooth;
+  background: #FAF9F6;
+  color:#3b2a1a;
+}
 
-  .whatsapp-btn {
-    background: #25D366;
-    color: white;
-    border-radius: 30px;
-    transition: 0.3s;
-  }
-
-  .whatsapp-btn:hover {
-    background: #1ebe5d;
-    transform: scale(1.05);
-  }
-
-/* PARALLAX */
 .parallax {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
+:root{
+  --primary:#9c7036;
+  --secondary:#e8d8c3;
+  --dark:#2b1d0f;
+}
+
 /* HERO */
 .hero {
-  height: 90vh;
-  background-image: url('./retreat_pictures/colibri_title.jpg');
+  height: 30vh;
+  background-image: url('./retreat_pictures/colibri_bg.jpg');
+  background-size:cover;
+  background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -41,276 +41,274 @@ body {font-family: "Helvetica", sans-serif; scroll-behavior:smooth; background: 
 }
 
 .overlay {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.45);
   padding:40px;
   border-radius:10px;
-  backdrop-filter: blur(6px);
 }
 
-/* ANIMACIONES */
+/* BOTON */
+.cta-btn {
+  background: var(--primary);
+  color:white;
+  border-radius:30px;
+  padding:12px 25px;
+  border:none;
+  cursor:pointer;
+  margin-top:20px;
+  transition:0.3s;
+}
+.cta-btn:hover {
+  transform: scale(1.07);
+}
+
+/* SECCIONES */
+.section-light {background:var(--secondary);}
 .fade-in {
   opacity:0;
   transform:translateY(40px);
-  transition:all 1s ease;
+  transition:1s;
 }
-.fade-in.visible {
+.visible {
   opacity:1;
   transform:translateY(0);
 }
 
-/* CARRUSEL */
-.carousel-wrapper {
-  position:relative;
+/* GRID */
+.grid-2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+@media(max-width:768px){
+  .grid-2{grid-template-columns:1fr;}
+}
+
+/* CARDS */
+.card {
+  background:white;
+  border-radius:15px;
   overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
 }
+.card:hover {transform:translateY(-8px);}
+.card img {width:100%;}
 
-.carousel-track {
-  display:flex;
-  transition: transform 0.5s ease;
+/* FACILITATORS */
+.facilitators {
+  background:var(--dark);
+  color:white;
 }
-
-.carousel-item {
-  min-width:300px;
-  margin:0 10px;
-  text-align:center;
-  transition: transform 0.3s;
+.facilitator-card {
+  padding:30px;
+  border-radius:15px;
 }
-
-.carousel-item:hover {
-  transform: scale(1.05);
-}
-
-.carousel-item img {
+.sanne {background:#3b2a1a;}
+.sebuky {background:#4a3320;}
+.facilitator-card img {
   width:100%;
-  height:220px;
-  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:15px;
+}
+
+/* GALERIA */
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+.gallery img {
+  width:100%;
   border-radius:10px;
 }
 
-.carousel-title {
-  margin-top:10px;
-}
-
-/* BOTONES */
-.carousel-btn {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.6);
-  color:white;
-  border:none;
-  padding:10px;
-  cursor:pointer;
-  border-radius:50%;
-  z-index:10;
-}
-
-.carousel-btn:hover {background:black;}
-.left {left:10px;}
-.right {right:10px;}
-
-.lang-btn {cursor:pointer; margin-left:10px;}
-
-.investment-section {
-  background: linear-gradient(135deg, #F4EDE4, #FAF9F6);
-  color: #1F3D3B;
-}
-
 footer {
-  background: #1F3D3B;
-  color: #FAF9F6;
+  background:var(--dark);
+  color:white;
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- LANGUAGE -->
-<div class="w3-top w3-padding w3-right-align w3-white">
-  <span class="lang-btn" onclick="setLang('en')">EN</span>
-  <span class="lang-btn" onclick="setLang('es')">ES</span>
-  <span class="lang-btn" onclick="setLang('cat')">CAT</span>
-</div>
-
 <!-- HERO -->
-<div class="hero parallax">
+<div class="hero">
   <div class="overlay fade-in">
-    <h1 data-en="Embody Your Aliveness"
-        data-es="Encarnar tu Vitalidad"
-        data-cat="Encarnar la teva vitalitat">
-        Embody Your Aliveness
-    </h1>
+    <h1>DISCONNECT FROM THE NOISE</h1>
+    <p>& awaken your body through music, movement, and presence</p>
+    <p>26–29 August • 4 days / 3 nights</p>
 
-    <p data-en="Solstice Retreat in Spain"
-       data-es="Retiro de Solsticio en España"
-       data-cat="Retir de Solstici a Espanya">
-       Solstice Retreat in Spain
-    </p>
-    <p data-en="18 - 21 June"
-       data-es="18 - 21 Junio"
-       data-cat="18 - 21 Juny">18 - 21 June </p>
+    <a href="https://wa.me/34717102778" target="_blank">
+      <button class="cta-btn">Book Now</button>
+    </a>
   </div>
 </div>
 
-<div class="w3-container w3-padding-64 w3-light-grey fade-in">
+<!-- ABOUT -->
+<div class="w3-container w3-padding-64 section-light fade-in">
 <div class="w3-content">
+<h2>The Experience</h2>
 
-<h2 data-en="The Experience" data-es="La Experiencia" data-cat="L’Experiència">
-The Experience
-</h2>
-
-<p data-en="This retreat is an invitation to slow down, reconnect with your body and remember what it feels like to be fully alive."
-   data-es="Este retiro es una invitación a parar, reconectar con tu cuerpo y recordar lo que se siente al estar verdaderamente vivo."
-   data-cat="Aquest retir és una invitació a parar, reconnectar amb el teu cos i recordar què se sent en estar plenament viu.">
-This retreat is an invitation to slow down, reconnect with your body and remember what it feels like to be fully alive.
+<p>
+A retreat to reconnect with your body, your energy and your natural rhythm.
+Through yoga, music, movement and stillness, we create space for expression,
+healing and joy.
 </p>
 
-<p data-en="Through yoga, conscious movement, music and deep presence, we create a safe and inspiring space where you can open your heart, express yourself freely and explore your inner world."
-   data-es="A través del yoga, el movimiento consciente, la música y la presencia, creamos un espacio seguro e inspirador donde abrir el corazón, expresarte libremente y explorar tu mundo interior."
-   data-cat="Mitjançant el ioga, el moviment conscient, la música i la presència, creem un espai segur i inspirador on obrir el cor, expressar-te lliurement i explorar el teu món interior.">
-Through yoga, conscious movement, music and deep presence, we create a safe and inspiring space where you can open your heart, express yourself freely and explore your inner world.
-</p>
-
-<p data-en="It is a space to soften, to release what no longer serves you, and to reconnect with your natural joy, creativity and vitality."
-   data-es="Es un espacio para soltar lo que ya no necesitas y reconectar con tu alegría, creatividad y vitalidad natural."
-   data-cat="És un espai per deixar anar el que ja no necessites i reconnectar amb la teva alegria, creativitat i vitalitat natural.">
-It is a space to soften, to release what no longer serves you, and to reconnect with your natural joy, creativity and vitality.
-</p>
-
+<p><b>👶 Family friendly space</b> – you are welcome to come with your children.</p>
 </div>
 </div>
 
-<!-- PARALLAX BREAK -->
+<!-- YOGA (TUYA RESTAURADA) -->
 <div class="parallax" style="height:300px;background-image:url('./retreat_pictures/yoga_sanne_2.jpeg');"></div>
 
-<!-- PROGRAM -->
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
+<h1>YOGA</h1>
+<h2>Meditation - Presence</h2>
+</div>
+</div>
+
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/yoga_sanne_2.jpeg');"></div>
+
+<!-- ECSTATIC (TUYA RESTAURADA) -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/ecstatic_dance.jpg');"></div>
+
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
+<h1>ECSTATIC DANCE</h1>
+<h2>Live Instruments - Original Music - Guided Journey</h2>
+</div>
+</div>
+
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/ecstatic_dance.jpg');"></div>
+
+<!-- INCLUDED -->
+<div class="w3-container w3-padding-64 section-light fade-in">
+<div class="w3-content grid-2">
+
+<div>
+<h3>What’s Included</h3>
+<ul>
+<li>3 meals per day</li>
+<li>Accommodation</li>
+<li>Yoga & meditation</li>
+<li>Ecstatic Dance</li>
+<li>Live music</li>
+</ul>
+</div>
+
+<div>
+<h3>Not Included</h3>
+<ul>
+<li>Travel (transport available)</li>
+<li>Airfare</li>
+<li>Insurance</li>
+<li>Visa</li>
+<li>Personal expenses</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- PRICES MEJORADOS (SIN BORRAR LOS TUYOS) -->
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
+<h2>Accommodation</h2>
+
+<div class="grid-2">
+
+<div class="card">
+<img src="./retreat_pictures/shared_room.jpeg">
+<div style="padding:20px">
+<h3>Shared Room</h3>
+<p>8 beds</p>
+<h4>500€</h4>
+</div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/double_single_rooms.jpeg">
+<div style="padding:20px">
+<h3>Double Room (2 beds)</h3>
+<h4>600€</h4>
+</div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/double_room.jpeg">
+<div style="padding:20px">
+<h3>Double Room (double bed)</h3>
+<h4>700€</h4>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- LOCATION -->
 <div class="w3-container w3-padding-64 fade-in">
 <div class="w3-content">
 
-<h2 data-en="What’s Included" data-es="Qué incluye" data-cat="Què inclou">What’s Included</h2>
+<h2>Location</h2>
 
-<ul class="w3-ul">
-<li data-en="3 wholesome meals per day" data-es="3 comidas nutritivas al día" data-cat="3 àpats nutritius al dia">
-  3 wholesome meals per day
-</li>
+<iframe src="https://maps.google.com/maps?q=Santa%20Llogaia%20de%20Terri&output=embed"
+width="100%" height="300" style="border-radius:10px;"></iframe>
 
-<li data-en="Private or shared accommodations" data-es="Habitaciones privadas o compartidas" data-cat="Habitacions privades o compartides">
-  Private or shared accommodations
-</li>
-<li data-en="Daily yoga & meditation" data-es="Yoga y meditación diaria" data-cat="Ioga i meditació diària">Daily yoga & meditation</li>
-<li data-en="Movement workshops" data-es="Talleres de movimiento" data-cat="Tallers de moviment">Movement workshops</li>
-<li data-en="Cacao ceremony" data-es="Ceremonia de cacao" data-cat="Cerimònia de cacau">Cacao ceremony</li>
-<li data-en="Ecstatic Dance" data-es="Ecstatic Dance" data-cat="Ecstatic Dance">Ecstatic Dance</li>
-<li data-en="Live music" data-es="Música en vivo" data-cat="Música en directe">Live music</li>
-<li data-en="Integration circles" data-es="Círculos de integración" data-cat="Cercles d’integració">Integration circles</li>
-</ul>
+<div class="gallery" style="margin-top:20px;">
+<img src="./retreat_pictures/room.jpg">
+<img src="./retreat_pictures/yoga_sanne.jpg">
+<img src="./retreat_pictures/pool.jpg">
+</div>
 
 </div>
 </div>
 
-<!-- CARRUSEL -->
-<div class="w3-container w3-padding-64 w3-light-grey fade-in">
+<!-- FACILITATORS -->
+<div class="w3-container w3-padding-64 facilitators fade-in">
+<div class="w3-content">
+
+<h2 style="text-align:center;">Facilitators</h2>
+
+<div class="grid-2">
+
+<div class="facilitator-card sanne">
+<img src="./retreat_pictures/yoga_sanne.jpg">
+<h3>Sanne</h3>
+<p>Yoga teacher & movement facilitator</p>
+</div>
+
+<div class="facilitator-card sebuky">
+<img src="./retreat_pictures/sebuky.jpg">
+<h3>Sebuky</h3>
+<p>Live musician & ecstatic dance DJ</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- INQUIRY -->
+<div class="w3-container w3-padding-64 section-light fade-in">
 <div class="w3-content w3-center">
 
-<h2 data-en="Moments of connection"
-    data-es="Momentos de conexión"
-    data-cat="Moments de connexió">Moments of connection</h2>
-
-<div class="carousel-wrapper">
-
-<button class="carousel-btn left" onclick="moveSlide(-1)">❮</button>
-<button class="carousel-btn right" onclick="moveSlide(1)">❯</button>
-
-<div class="carousel-track" id="track">
-
-<!-- items -->
-<div class="carousel-item"><img src="./retreat_pictures/cacao_circle_nature_2.jpg"><div data-en="Cacao Ceremony" data-es="Ceremonia de cacao" data-cat="Cerimònia de cacau">Cacao Ceremony</div></div>
-<div class="carousel-item"><img src="./retreat_pictures/playing_dj_set.jpeg"><div data-en="Live Music" data-es="Música en vivo" data-cat="Música en directe">Live Music</div></div>
-<div class="carousel-item"><img src="./retreat_pictures/playing_ecstatic_dance.jpg"><div data-en="Ecstatic Dance" data-es="Ecstatic Dance" data-cat="Ecstatic Dance">Ecstatic Dance</div></div>
-<div class="carousel-item"><img src="./retreat_pictures/yoga_sanne_4.jpeg"><div data-en="Yoga" data-es="Yoga" data-cat="Ioga">Yoga</div></div>
-<div class="carousel-item">
-          <img src="./retreat_pictures/family.jpg">
-          <div data-en="Family Friendly Space" data-es="Espacio familiar" data-cat="Espai familiar">Family Friendly Space</div>
-        </div>
-
-</div>
-</div>
-</div>
-</div>
-
-<!-- PRICE -->
-<div class="w3-container w3-padding-64 w3-center fade-in investment-section">
-<h2 data-en="Investment" data-es="Precio" data-cat="Preu">Investment</h2>
-<h1>900€</h1>
-<p data-en="Full program included"
-   data-es="Programa incluido"
-   data-cat="Programa inclòs">Full program included</p>
-</div>
-<!-- FACILITATORS -->
-<div class="w3-container w3-padding-64">
-  <div class="w3-content w3-center">
-    <h2 data-en="Facilitators"
-        data-es="Facilitadores"
-        data-cat="Facilitadors">Facilitators</h2>
-
-    <p><b>Sanne</b> – Holistic therapist, yoga teacher, movement facilitator, ecstatic dance DJ.</p>
-    <p><b>Sebuky</b> – Multi-instrumentalist, electronic music producer, live performer.</p>
-
-    <img src="./retreat_pictures/caca_circle_nature_2.jpg" style="width:45%; border-radius:10px;">
-  </div>
-</div>
-<!-- CTA -->
-<div class="w3-container w3-padding-64 w3-center fade-in">
-
-<h2 data-en="Join Us" data-es="Únete" data-cat="Uneix-te">
-Join Us
-</h2>
-
-<p data-en="Limited spots available" data-es="Plazas limitadas" data-cat="Places limitades">
-Limited spots available
-</p>
+<h2>Send Inquiry</h2>
+<p>Questions? Reach out directly</p>
 
 <a href="https://wa.me/34717102778" target="_blank">
-  <button class="w3-button w3-padding-large whatsapp-btn"
-          data-en="Apply via WhatsApp"
-          data-es="Aplicar por WhatsApp"
-          data-cat="Aplica per WhatsApp">
-    Apply via WhatsApp
-  </button>
+<button class="cta-btn">Message us on WhatsApp</button>
 </a>
 
 </div>
+</div>
+
 <footer class="w3-center w3-padding-32">
-<p>Contact: sebuky@sebuky.com</p>
+<p>sebuky@sebuky.com</p>
 </footer>
 
 <script>
-/* LANG */
-function setLang(lang){
-document.querySelectorAll("[data-en]").forEach(el=>{
-el.innerText=el.getAttribute("data-"+lang);
-});
-}
-
-/* CAROUSEL LOOP INFINITO */
-let index=0;
-
-function moveSlide(dir){
-const track=document.getElementById("track");
-const items=document.querySelectorAll(".carousel-item");
-
-index+=dir;
-
-if(index<0) index=items.length-1;
-if(index>=items.length) index=0;
-
-const width=items[0].offsetWidth+20;
-
-track.style.transform=`translateX(-${index*width}px)`;
-}
-
-/* SCROLL ANIMATION */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -318,7 +316,6 @@ entry.target.classList.add("visible");
 }
 });
 });
-
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
 </script>
 
