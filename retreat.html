@@ -15,12 +15,14 @@ body {
   color:#3b2a1a;
 }
 
+/* PARALLAX */
 .parallax {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
+/* COLORS */
 :root{
   --primary:#9c7036;
   --secondary:#e8d8c3;
@@ -46,7 +48,7 @@ body {
   border-radius:10px;
 }
 
-/* BOTON */
+/* BUTTON */
 .cta-btn {
   background: var(--primary);
   color:white;
@@ -61,7 +63,7 @@ body {
   transform: scale(1.07);
 }
 
-/* SECCIONES */
+/* SECTIONS */
 .section-light {background:var(--secondary);}
 .fade-in {
   opacity:0;
@@ -85,8 +87,7 @@ body {
   gap:40px;
 }
 @media(max-width:768px){
-  .grid-2{grid-template-columns:1fr;}
-  .grid-3{grid-template-columns:1fr;}
+  .grid-2,.grid-3{grid-template-columns:1fr;}
 }
 
 /* CARDS */
@@ -97,7 +98,9 @@ body {
   box-shadow:0 10px 25px rgba(0,0,0,0.08);
   transition:0.3s;
 }
-.card:hover {transform:translateY(-8px);}
+.card:hover {
+  transform:translateY(-10px) scale(1.02);
+}
 .card img {width:100%;}
 
 /* FACILITATORS */
@@ -117,7 +120,7 @@ body {
   margin-bottom:15px;
 }
 
-/* GALERIA */
+/* GALLERY */
 .gallery {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -128,16 +131,15 @@ body {
   border-radius:10px;
 }
 
+/* CAROUSEL */
 #mamaTrack {
   display:flex;
   transition: transform 0.6s ease;
 }
-
 #mamaTrack .carousel-item {
   min-width: 320px;
   margin: 0 10px;
 }
-
 #mamaTrack img {
   height: 220px;
   object-fit: cover;
@@ -146,63 +148,40 @@ body {
 
 /* LIGHTBOX */
 .lightbox {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
+  display:none;
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
   backdrop-filter: blur(8px);
-  animation: fadeIn 0.4s;
 }
-
 .lightbox-content {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 10px;
-  animation: zoomIn 0.4s;
+  display:block;
+  margin:auto;
+  max-width:90%;
+  max-height:85%;
+  margin-top:60px;
+  border-radius:10px;
 }
-
 .lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
+  position:absolute;
+  top:20px;
+  right:40px;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
 }
 
-.lightbox-close:hover {
-  color: #ccc;
+/* HOVER IMAGES */
+img {
+  cursor:pointer;
+  transition:0.3s;
 }
-
-/* ANIMACIONES */
-@keyframes zoomIn {
-  from {transform: scale(0.8);}
-  to {transform: scale(1);}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-.gallery img,
-.room-card img,
-.carousel-item img {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover,
-.room-card img:hover,
-.carousel-item img:hover {
-  transform: scale(1.05);
+img:hover {
+  transform:scale(1.05);
 }
 
 footer {
@@ -227,10 +206,10 @@ footer {
   </div>
 </div>
 
-
 <!-- ABOUT -->
 <div class="w3-container w3-padding-64 section-light fade-in">
 <div class="w3-content">
+
 <h2>The Experience</h2>
 
 <p>
@@ -239,64 +218,21 @@ Through yoga, music, movement and stillness, we create space for expression,
 healing and joy.
 </p>
 
-
 <div class="grid-3">
 
-<div class="card">
-<img src="./retreat_pictures/cacao_circle_nature_2.jpg">
-<div style="padding:20px">
-<h3>Cacao Circle</h3>
-</div>
-</div>
-
-
-
-<div class="card">
-<img src="./retreat_pictures/gaita_bolivia.jpg">
-<div style="padding:20px">
-<h3>Live Ecstatic Dance</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/lovely_place.jpg">
-<div style="padding:20px">
-<h3>Lovely Enviroment</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/nourishing_food.jpg">
-<div style="padding:20px">
-<h3>Nourishing food</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/yoga_square.jpeg">
-<div style="padding:20px">
-<h3>Yoga & movement</h3>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/nature.jpeg">
-<div style="padding:20px">
-<h3>Nature immersion</h3>
-</div>
-</div>
-
+<div class="card"><img src="./retreat_pictures/cacao_circle_nature_2.jpg"><div style="padding:20px"><h3>Cacao Circle</h3></div></div>
+<div class="card"><img src="./retreat_pictures/gaita_bolivia.jpg"><div style="padding:20px"><h3>Live Ecstatic Dance</h3></div></div>
+<div class="card"><img src="./retreat_pictures/lovely_place.jpg"><div style="padding:20px"><h3>Beautiful Environment</h3></div></div>
+<div class="card"><img src="./retreat_pictures/nourishing_food.jpg"><div style="padding:20px"><h3>Nourishing Food</h3></div></div>
+<div class="card"><img src="./retreat_pictures/yoga_square.jpeg"><div style="padding:20px"><h3>Yoga & Movement</h3></div></div>
+<div class="card"><img src="./retreat_pictures/nature.jpeg"><div style="padding:20px"><h3>Nature Immersion</h3></div></div>
 
 </div>
-
-
-
 
 </div>
 </div>
 
-
-<!-- ECSTATIC (TUYA RESTAURADA) -->
+<!-- PARALLAX -->
 <div class="parallax" style="height:300px;background-image:url('./retreat_pictures/ecstatic_dance.jpg');"></div>
 
 <!-- INCLUDED -->
@@ -328,64 +264,38 @@ healing and joy.
 </div>
 </div>
 
-
-
-<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/ecstatic_dance.jpg');"></div>
-
-
-<!-- PRICES MEJORADOS (SIN BORRAR LOS TUYOS) -->
+<!-- PRICES -->
 <div class="w3-container w3-padding-64 fade-in">
 <div class="w3-content">
 <h2>Accommodation</h2>
 
 <div class="grid-3">
 
-<div class="card">
-<img src="./retreat_pictures/shared_room.jpeg">
-<div style="padding:20px">
-<h3>Shared Room</h3>
-<p>8 beds</p>
-<h4>500€</h4>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/double_single_rooms.jpeg">
-<div style="padding:20px">
-<h3>Double Room (2 beds)</h3>
-<h4>600€</h4>
-</div>
-</div>
-
-<div class="card">
-<img src="./retreat_pictures/double_room.jpeg">
-<div style="padding:20px">
-<h3>Double Room (double bed)</h3>
-<h4>700€</h4>
-</div>
-</div>
+<div class="card"><img src="./retreat_pictures/shared_room.jpeg"><div style="padding:20px"><h3>Shared Room</h3><p>8 beds</p><h4>500€</h4></div></div>
+<div class="card"><img src="./retreat_pictures/double_single_rooms.jpeg"><div style="padding:20px"><h3>Double Room (2 beds)</h3><h4>600€</h4></div></div>
+<div class="card"><img src="./retreat_pictures/double_room.jpeg"><div style="padding:20px"><h3>Double Room (double bed)</h3><h4>700€</h4></div></div>
 
 </div>
 </div>
 </div>
 
-<!-- YOGA (TUYA RESTAURADA) -->
 <div class="parallax" style="height:300px;background-image:url('./retreat_pictures/mamaKilla-6.jpeg');"></div>
+
 <!-- LOCATION -->
 <div class="w3-container w3-padding-64 fade-in">
 <div class="w3-content">
 
 <h2>Location</h2>
+
 <p>
-Vell Can Gironès és una casa de camp restaurada del S.XV situada a Santa Llogaia del Terri, un petit poble de 40 habitants entre Banyoles i Girona.
+Vell Can Gironès is a restored 15th-century countryside house located in Santa Llogaia del Terri, a small village between Banyoles and Girona.
 
-Natura
-Ideal per connectar amb la natura i descansar tot rodejat de boscos, camps de cultiu i el murmureig del riu que envolta la finca. 
+Surrounded by nature, it is an ideal place to disconnect, rest and reconnect, immersed in forests, fields and the gentle sound of the nearby river.
 
-where asociation Associació Mamakilla takes place, more info in : https://www.mamakilla.cat/ca/mamakilla/
+The retreat takes place at the Mamakilla association.
 </p>
-<!-- CAROUSEL MAMAKILLA -->
-<div class="carousel-wrapper" style="margin-top:30px;">
+
+<div class="carousel-wrapper" style="overflow:hidden; position:relative; margin-top:30px;">
 
   <button class="carousel-btn left" onclick="moveMamaSlide(-1)">❮</button>
   <button class="carousel-btn right" onclick="moveMamaSlide(1)">❯</button>
@@ -409,15 +319,15 @@ where asociation Associació Mamakilla takes place, more info in : https://www.m
 
   </div>
 </div>
+
 <iframe src="https://maps.google.com/maps?q=Santa%20Llogaia%20de%20Terri&output=embed"
 width="100%" height="300" style="border-radius:10px;"></iframe>
-
-
 
 </div>
 </div>
 
 <div class="parallax" style="height:300px;background-image:url('./retreat_pictures/mamaKilla-6.jpeg');"></div>
+
 
 <!-- FACILITATORS -->
 <div class="w3-container w3-padding-64 facilitators fade-in">
@@ -443,25 +353,26 @@ width="100%" height="300" style="border-radius:10px;"></iframe>
 </div>
 </div>
 
-<!-- INQUIRY -->
-<div class="w3-container w3-padding-64 section-light fade-in">
-<div class="w3-content w3-center">
-
+<!-- CTA -->
+<div class="w3-container w3-padding-64 section-light fade-in w3-center">
 <h2>Send Inquiry</h2>
-<p>Questions? Reach out directly</p>
-
 <a href="https://wa.me/34717102778" target="_blank">
 <button class="cta-btn">Message us on WhatsApp</button>
 </a>
-
-</div>
 </div>
 
 <footer class="w3-center w3-padding-32">
 <p>sebuky@sebuky.com</p>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+<span class="lightbox-close" onclick="closeLightbox()">×</span>
+<img class="lightbox-content" id="lightbox-img">
+</div>
+
 <script>
+/* FADE */
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
 if(entry.isIntersecting){
@@ -470,33 +381,19 @@ entry.target.classList.add("visible");
 });
 });
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
-</script>
-<script>
-let mamaIndex = 0;
 
-function moveMamaSlide(dir){
-  const track = document.getElementById("mamaTrack");
-  const items = track.querySelectorAll(".carousel-item");
+/* LIGHTBOX FIX */
+document.querySelectorAll("img").forEach(img=>{
+img.addEventListener("click",()=>{
+document.getElementById("lightbox").style.display="block";
+document.getElementById("lightbox-img").src=img.src;
+});
+});
 
-  mamaIndex += dir;
-
-  if(mamaIndex < 0) mamaIndex = items.length - 1;
-  if(mamaIndex >= items.length) mamaIndex = 0;
-
-  const width = items[0].offsetWidth + 20;
-
-  track.style.transform = `translateX(-${mamaIndex * width}px)`;
+function closeLightbox(){
+document.getElementById("lightbox").style.display="none";
 }
-
-/* AUTO PLAY (opcional pero le da magia) */
-setInterval(() => {
-  moveMamaSlide(1);
-}, 4000);
 </script>
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close" onclick="closeLightbox()">×</span>
-  <img class="lightbox-content" id="lightbox-img">
-</div>
+
 </body>
 </html>
