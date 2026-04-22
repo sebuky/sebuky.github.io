@@ -306,24 +306,51 @@ footer {
 @media (max-width: 768px) {
 
   .hero {
-    height: auto; /* 🔥 clave */
+    height: auto;
     min-height: 60vh;
     padding: 40px 20px;
   }
 
   .hero-title {
     font-size: 32px;
+    line-height: 1.1;
   }
 
   .hero-subtitle {
     font-size:16px;
+    padding:0 10px;
   }
 
+  /* HERO BOTTOM MOBILE CLEAN */
   .hero-bottom {
+    width:100%;
     grid-template-columns:1fr;
-    gap:8px;
-    font-size:12px;
+    border-top:none;
+    padding-top:0;
+    bottom:25px;
   }
+
+  /* ocultar fecha y lugar */
+  .hero-bottom div:first-child,
+  .hero-bottom div:last-child{
+    display:none;
+  }
+
+  /* botón principal */
+  .hero-bottom div:nth-child(2){
+    display:flex;
+    justify-content:center;
+  }
+
+  .hero-bottom a{
+    padding:10px 18px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.6);
+    border-radius:30px;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+
 
   .overlay {
     padding: 20px; /* menos padding */
@@ -359,7 +386,7 @@ footer {
     <p class="hero-subtitle">A 4-Day Embodiment Retreat with Yoga, Movement & Sound</p>
 
     <div class="hero-bottom">
-      <div>26–29 AUGUST 2026</div>
+      <div>23–26 AUGUST 2026</div>
       <div><a href="https://wa.me/34717102778" target="_blank">JOIN THE EXPERIENCE</a></div>
       <div>CATALONIA, SPAIN</div>
     </div>
