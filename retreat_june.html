@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Summer Solstice Yoga & Sound Healing Retreat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+
+/* COLORS */
+:root{
+--primary:#b88746;
+--secondary:#efe3d2;
+--dark:#d8c1a2;
+--accent:#d9a55a;
+--light:#f8f4ee;
+}
+
+body{
+font-family:Helvetica,sans-serif;
+background:var(--light);
+color:#3b2a1a;
+margin:0;
+scroll-behavior:smooth;
+}
+
+/* HERO */
+.hero{
+height:65vh;
+background-image:url('./retreat_pictures/colibri_title.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+color:white;
+text-align:center;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.38);
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.hero-title{
+font-family:"Playfair Display",serif;
+font-size:60px;
+letter-spacing:3px;
+margin:0;
+}
+
+.hero-subtitle{
+font-style:italic;
+font-size:22px;
+margin-top:12px;
+}
+
+.hero-bottom{
+position:absolute;
+bottom:25px;
+width:85%;
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+border-top:1px solid rgba(255,255,255,0.5);
+padding-top:14px;
+font-size:14px;
+}
+
+.hero-bottom a{
+color:white;
+text-decoration:none;
+border-bottom:1px solid white;
+}
+
+/* BUTTON */
+.cta-btn{
+background:var(--primary);
+color:white;
+border:none;
+padding:14px 26px;
+border-radius:30px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTION */
+.section-light{background:var(--secondary);}
+.fade-in{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* GRID */
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+.grid-3{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:30px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:14px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+.card div{
+padding:20px;
+}
+
+/* PARALLAX */
+.parallax{
+height:320px;
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+footer{
+background:var(--dark);
+padding:30px;
+text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.grid-2,.grid-3{
+grid-template-columns:1fr;
+}
+
+.parallax{
+background-attachment:scroll;
+}
+
+.hero{
+height:auto;
+min-height:70vh;
+}
+
+.hero-title{
+font-size:34px;
+}
+
+.hero-subtitle{
+font-size:16px;
+}
+
+.hero-bottom{
+grid-template-columns:1fr;
+gap:8px;
+font-size:12px;
+bottom:15px;
+}
+
+}
+
+/* FACILITATORS */
+.facilitators{
+background:var(--dark);
+color:#3b2a1a;
+}
+
+.facilitator-card{
+background:var(--light);
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.facilitator-card img{
+width:100%;
+height:360px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+/* CAROUSEL */
+.carousel-wrapper{
+overflow:hidden;
+position:relative;
+margin-top:30px;
+}
+
+.carousel-track{
+display:flex;
+transition:transform .6s ease;
+}
+
+.carousel-item{
+min-width:320px;
+margin:0 10px;
+flex-shrink:0;
+}
+
+.carousel-item img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:14px;
+}
+
+/* BUTTONS */
+.carousel-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:46px;
+height:46px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+background:rgba(0,0,0,.45);
+color:white;
+font-size:24px;
+z-index:20;
+}
+
+.carousel-btn.left{left:10px;}
+.carousel-btn.right{right:10px;}
+
+.carousel-btn:hover{
+background:var(--primary);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.carousel-item{
+min-width:85%;
+margin:0 8px;
+}
+
+.facilitator-card img{
+height:280px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-overlay">
+
+<h1 class="hero-title">SUMMER SOLSTICE</h1>
+<p class="hero-subtitle">Yoga & Sound Healing Retreat</p>
+
+<div class="hero-bottom">
+<div>19–21 JUNE 2026</div>
+<div><a href="https://wa.me/34717102778">RESERVE YOUR SPOT</a></div>
+<div>PENEDÈS · BARCELONA</div>
+</div>
+
+</div>
+</div>
+
+<!-- INTRO -->
+<div class="w3-container w3-padding-64 section-light fade-in">
+<div class="w3-content w3-center">
+
+<h2>Welcome Summer with Presence</h2>
+
+<p>
+Step away from the busyness of everyday life and spend a nourishing weekend in the peaceful countryside near Barcelona.
+</p>
+
+<p>
+This intimate retreat is designed to help you slow down, reconnect with yourself, and welcome the summer season with clarity, joy, and renewed energy.
+</p>
+
+<p>
+With only <strong>8 guests maximum</strong>, the atmosphere remains warm, personal and supportive.
+</p>
+
+</div>
+</div>
+
+<!-- PARALLAX -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/cacao_picture.jpg');"></div>
+
+<!-- EXPERIENCE -->
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
+
+<h2 class="w3-center">The Experience</h2>
+
+<div class="grid-3">
+
+<div class="card">
+<img src="./retreat_pictures/yoga_square.jpeg">
+<div><h3>Daily Yoga</h3></div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/gaita_bolivia.jpg">
+<div><h3>Sound Healing</h3></div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/nourishing_food.jpg">
+<div><h3>Vegetarian Meals</h3></div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/june/pool.jpeg">
+<div><h3>Pool & Rest</h3></div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/nature.jpeg">
+<div><h3>Nature Walks</h3></div>
+</div>
+
+<div class="card">
+<img src="./retreat_pictures/cacao_circle_nature_2.jpg">
+<div><h3>Connection Circles</h3></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+
+<!-- PARALLAX -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/ecstatic_dance.jpg');"></div>
+
+
+<!-- OUR INTENTION -->
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content w3-center">
+
+<h2>Our Intention</h2>
+
+<p>
+This retreat is an invitation to pause, breathe deeply, and reconnect with what truly matters.
+</p>
+
+<p>
+We create a warm and grounded space where you can rest your nervous system, nourish your body, and return to yourself through movement, stillness, sound, and nature.
+</p>
+
+<p>
+As we enter the summer season, this weekend offers a moment to reflect, reset your energy, and move forward with greater clarity and openness.
+</p>
+
+<p>
+With only a small group, the atmosphere remains intimate, supportive, and personal.
+</p>
+<a href="https://wa.me/34717102778" target="_blank">
+<button class="cta-btn">Start your journey</button>
+</a>
+</div>
+</div>
+
+
+<!-- FACILITATORS -->
+<div class="w3-container w3-padding-64 facilitators fade-in">
+<div class="w3-content">
+
+<h2 class="w3-center">Facilitators</h2>
+
+<p class="w3-center">
+Hosted by Sanne & Sebuky — combining yoga, embodiment, music and conscious spaces.
+</p>
+
+<div class="grid-2">
+
+<div class="facilitator-card">
+<img src="./retreat_pictures/yoga_sanne.jpg">
+<h3>Sanne</h3>
+<p>
+Holistic therapist, yoga teacher and facilitator of embodied spaces. Sanne guides practices that invite grounding, inner connection and authentic expression.
+</p>
+</div>
+
+<div class="facilitator-card">
+<img src="./retreat_pictures/sebuky2.jpg">
+<h3>Sebuky</h3>
+<p>
+Multi-instrumentalist and music producer creating immersive journeys through sound, rhythm and presence.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<!-- PARALLAX -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/june/pool.jpeg');"></div>
+
+
+
+<!-- LOCATION -->
+<div class="w3-container w3-padding-64 section-light fade-in">
+<div class="w3-content w3-center">
+
+<h2>The Space</h2>
+
+<p>
+Hosted at a beautiful countryside house in the Penedès region, surrounded by vineyards, rolling hills and peaceful nature.
+</p>
+
+<p>
+MasiaTeulera, Cal Ramón Teulera, Sant Martí Sarroca, Barcelona.
+</p>
+
+<p>
+Only 50–60 minutes from Barcelona city.
+</p>
+
+
+<div class="carousel-wrapper" style="overflow:hidden; position:relative; margin-top:30px;">
+
+  <button class="carousel-btn left" onclick="moveMamaSlide(-1)">❮</button>
+  <button class="carousel-btn right" onclick="moveMamaSlide(1)">❯</button>
+
+  <div class="carousel-track" id="mamaTrack">
+
+    <div class="carousel-item"><img src="./retreat_pictures/june/overview_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/garden_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/kitchen_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/living_room_1.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/living_room.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/double_room_3.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/double_bed_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/bathroom.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/bathroom_2.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/double_bed_room_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/patio_2.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/patio.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/pool.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/table_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/two_single_rooms_small.jpeg"></div>
+    <div class="carousel-item"><img src="./retreat_pictures/june/underTable.jpeg"></div>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- PARALLAX -->
+<div class="parallax" style="height:300px;background-image:url('./retreat_pictures/june/patio.jpeg');"></div>
+
+</div>
+</div>
+<!-- ACCOMMODATION -->
+<div class="w3-container w3-padding-64 fade-in">
+<div class="w3-content">
+
+<h2 class="w3-center">Accommodation & Investment</h2>
+
+<div class="grid-3">
+
+<div class="card">
+  <img src="./retreat_pictures/june/two_single_rooms_small.jpeg">
+<div>
+<h3>Shared Room</h3>
+<h4>€365</h4>
+<p>Per person</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="./retreat_pictures/june/double_bed_4.jpeg">
+<div>
+<h3>Shared Double Bed</h3>
+<h4>€345</h4>
+<p>Ideal for couples or friends</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="./retreat_pictures/june/double_room_3.jpeg">
+<div>
+<h3>Private Room</h3>
+<h4>On Request</h4>
+<p>Limited availability</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- INCLUDED -->
+<div class="w3-container w3-padding-64 section-light fade-in">
+<div class="w3-content grid-2">
+
+<div>
+<h3>Included</h3>
+<ul>
+<li>2 nights accommodation</li>
+<li>All vegetarian meals</li>
+<li>Yoga & meditation</li>
+<li>Sound healing journey</li>
+<li>Workshops & circles</li>
+<li>Use of pool & facilities</li>
+</ul>
+</div>
+<div>
+<h3>Not Included</h3>
+<ul>
+<li>Travel (transportation options available)</li>
+<li>Flight ticket / Visa</li>
+<li>Insurance</li>
+<li>Personal expenses</li>
+<li>Massages</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="parallax" style="background-image:url('./retreat_pictures/yoga_square.jpeg');"></div>
+
+<!-- CTA -->
+<div class="w3-container w3-padding-64 fade-in w3-center">
+
+<h2>Join Us This Solstice</h2>
+
+<p>
+Spaces are limited to keep the retreat intimate.
+</p>
+
+<a href="https://wa.me/34717102778" target="_blank">
+<button class="cta-btn">Book Your Place</button>
+</a>
+
+</div>
+
+<!-- how to arrive -->
+<div class="w3-container w3-padding-64 section-light  fade-in w3-center">
+<div class="w3-content">
+
+<h2>How to Arrive</h2>
+
+<iframe src="https://maps.google.com/maps?q=Sant%20Marti%20Sarroca%20Barcelona&output=embed" width="100%" height="320" style="border:0;border-radius:12px;"> </iframe>
+
+<h4><A href="https://www.rome2rio.com/map/Barcelonahttps://www.rome2rio.com/s/Barcelona/Sant-Mart%C3%AD-Sarroca-Station" target="_blank"> How to arrive from Barcelona / Sant Martí Sarroca </A></h4>
+
+
+</div>
+</div>
+
+<footer>
+sebuky@sebuky.com
+</footer>
+
+<!-- REEMPLAZA TU SCRIPT POR ESTE (faltaba JS del carrusel) -->
+
+<script>
+
+/* FADE */
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
+
+/* CAROUSEL */
+let mamaIndex = 0;
+
+function moveMamaSlide(dir){
+
+const track = document.getElementById("mamaTrack");
+if(!track) return;
+
+const items = track.querySelectorAll(".carousel-item");
+const visible = window.innerWidth < 768 ? 1 : 3;
+
+mamaIndex += dir;
+
+if(mamaIndex < 0) mamaIndex = 0;
+if(mamaIndex > items.length - visible){
+mamaIndex = items.length - visible;
+}
+
+const width = items[0].offsetWidth + 20;
+
+track.style.transform =
+`translateX(-${mamaIndex * width}px)`;
+}
+
+/* SWIPE MOBILE */
+let startX = 0;
+const track = document.getElementById("mamaTrack");
+
+if(track){
+
+track.addEventListener("touchstart",e=>{
+startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend",e=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+moveMamaSlide(1);
+}
+
+if(endX - startX > 50){
+moveMamaSlide(-1);
+}
+
+});
+
+}
+
+</script>
+</body>
+</html>
