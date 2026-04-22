@@ -319,9 +319,21 @@ footer {
   .hero-subtitle {
     font-size:16px;
     padding:0 10px;
+    margin-bottom:12px;
   }
 
-  /* HERO BOTTOM MOBILE CLEAN */
+  /* mostrar fecha debajo subtítulo */
+  .hero-subtitle::after{
+    content:"26–29 AUGUST 2026";
+    display:block;
+    margin-top:10px;
+    font-size:13px;
+    font-style:normal;
+    letter-spacing:2px;
+    opacity:0.9;
+  }
+
+  /* bottom limpio */
   .hero-bottom {
     width:100%;
     grid-template-columns:1fr;
@@ -330,13 +342,13 @@ footer {
     bottom:25px;
   }
 
-  /* ocultar fecha y lugar */
+  /* ocultar fecha original y ubicación */
   .hero-bottom div:first-child,
   .hero-bottom div:last-child{
     display:none;
   }
 
-  /* botón principal */
+  /* botón centrado */
   .hero-bottom div:nth-child(2){
     display:flex;
     justify-content:center;
@@ -688,7 +700,7 @@ entry.target.classList.add("visible");
 }
 });
 });
-document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el));
+document.querySelectorAll(".fade-in").forEach(  el=>observer.observe(el));
 
 /* LIGHTBOX FIX */
 document.querySelectorAll("img").forEach(img=>{
